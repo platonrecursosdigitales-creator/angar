@@ -34,28 +34,28 @@ export const ProcessSection: React.FC = () => {
       num: "01",
       title: "Proyecto residencial",
       desc: "Diseño y construcción de viviendas pensadas para habitarse bien: distribución, estructura, materiales y acabados alineados a un proyecto funcional y duradero.",
-      img: "/src/assets/images/process_1.png",
+      img: "/assets/images/process_1.png",
       shortTitle: "Proyecto"
     },
     {
       num: "02",
       title: "Obra civil",
       desc: "Ejecución técnica y controlada de obras con atención al proceso, la seguridad, la planeación y el avance real del proyecto.",
-      img: "/src/assets/images/process_2.png",
+      img: "/assets/images/process_2.png",
       shortTitle: "Obra civil"
     },
     {
       num: "03",
       title: "Remodelación y ampliación",
       desc: "Intervenciones para transformar espacios existentes, optimizar su uso y aumentar su valor sin perder coherencia constructiva.",
-      img: "/src/assets/images/process_3.png",
+      img: "/assets/images/process_3.png",
       shortTitle: "Remodelación"
     },
     {
       num: "04",
       title: "Acabados y entrega",
       desc: "Cierre de obra con atención en terminaciones, limpieza visual, funcionalidad y calidad final de entrega.",
-      img: "/src/assets/images/process_4.png",
+      img: "/assets/images/process_4.png",
       shortTitle: "Acabados"
     }
   ];

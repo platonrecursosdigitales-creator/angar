@@ -11,7 +11,7 @@ export const LuxuryMarqueeSection: React.FC = () => {
       {/* Fondo de imagen hiperrealista generada */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/src/assets/images/luxury_bg.png')" }}
+        style={{ backgroundImage: "url('/assets/images/luxury_bg.png')" }}
       >
         <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
       </div>

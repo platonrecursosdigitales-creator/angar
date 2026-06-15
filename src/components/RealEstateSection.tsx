@@ -9,42 +9,42 @@ export const RealEstateSection: React.FC = () => {
       id: 1,
       title: "Altaria",
       category: "Desarrollo Residencial",
-      image: "/src/assets/images/proj_1.png",
+      image: "/assets/images/proj_1.png",
       gridClass: "col-span-12 md:col-span-4 md:row-span-2 min-h-[400px] md:min-h-full"
     },
     {
       id: 2,
       title: "Vía Terra",
       category: "Residencial Premium",
-      image: "/src/assets/images/proj_2.png",
+      image: "/assets/images/proj_2.png",
       gridClass: "col-span-12 md:col-span-8 min-h-[350px] md:min-h-[420px]"
     },
     {
       id: 3,
       title: "Monte Clara",
       category: "Privada Residencial",
-      image: "/src/assets/images/proj_3.png",
+      image: "/assets/images/proj_3.png",
       gridClass: "col-span-12 md:col-span-4 min-h-[350px] md:min-h-[420px]"
     },
     {
       id: 4,
       title: "Arboleda 27",
       category: "Residencia",
-      image: "/src/assets/images/proj_4.png",
+      image: "/assets/images/proj_4.png",
       gridClass: "col-span-12 md:col-span-4 min-h-[350px] md:min-h-[420px]"
     },
     {
       id: 5,
       title: "Áurea Residencial",
       category: "Conjunto Privado",
-      image: "/src/assets/images/proj_5.png",
+      image: "/assets/images/proj_5.png",
       gridClass: "col-span-12 md:col-span-7 min-h-[350px] md:min-h-[460px]"
     },
     {
       id: 6,
       title: "Casa Oliva",
       category: "Proyecto Arquitectónico",
-      image: "/src/assets/images/proj_6.png",
+      image: "/assets/images/proj_6.png",
       gridClass: "col-span-12 md:col-span-5 min-h-[350px] md:min-h-[460px]"
     }
   ];

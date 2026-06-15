@@ -42,7 +42,7 @@ export const Header: React.FC = () => {
           {/* Bloque Izquierdo: Logo */}
           <a href="#inicio" className="flex items-center gap-3 transition-transform hover:scale-[1.02]">
             <img 
-              src="/src/assets/logo/angarlogo.png" 
+              src="/assets/logo/angarlogo.png" 
               alt="ANGAR Logo" 
               className="h-8 lg:h-10 w-auto object-contain brightness-0 invert"
             />

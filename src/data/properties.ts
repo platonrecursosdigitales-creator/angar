@@ -7,7 +7,7 @@ export const lands = [
     type: "Ideal para construcción",
     price: "Precio a consultar",
     credits: "Infonavit, Fovissste, bancario y recursos propios",
-    image: "/src/assets/images/5.jpeg"
+    image: "/assets/images/5.jpeg"
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const lands = [
     type: "Ideal para negocio",
     price: "Precio a consultar",
     credits: "Bancario y recursos propios",
-    image: "/src/assets/images/6.jpeg"
+    image: "/assets/images/6.jpeg"
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ export const lands = [
     type: "Patrimonial",
     price: "Precio a consultar",
     credits: "Recursos propios",
-    image: "/src/assets/images/7.jpeg"
+    image: "/assets/images/7.jpeg"
   }
 ];
 
@@ -42,7 +42,7 @@ export const houses = [
     buildArea: "90m²",
     type: "Casa nueva",
     credits: "Todos los créditos aceptados",
-    image: "/src/assets/images/8.jpeg"
+    image: "/assets/images/8.jpeg"
   },
   {
     id: 2,
@@ -54,6 +54,6 @@ export const houses = [
     buildArea: "120m²",
     type: "Casa usada",
     credits: "Infonavit, bancario y recursos propios",
-    image: "/src/assets/images/9.jpeg"
+    image: "/assets/images/9.jpeg"
   }
 ];
