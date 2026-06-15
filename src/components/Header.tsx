@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { X, Phone } from 'lucide-react';
 import { MobileMenu } from './MobileMenu';
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isInmobiliariaOpen, setIsInmobiliariaOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,95 +17,88 @@ export const Header: React.FC = () => {
   const navLinks = [
     { name: 'Inicio', href: '#inicio' },
     { name: 'Construcción', href: '#construccion' },
-    { 
-      name: 'Inmobiliaria', 
-      href: '#inmobiliaria',
-      dropdown: [
-        { name: 'Terrenos', href: '#terrenos' },
-        { name: 'Casas Nuevas', href: '#casas' },
-        { name: 'Casas Usadas', href: '#casas' }
-      ]
-    },
+    { name: 'Inmobiliaria', href: '#inmobiliaria' },
     { name: 'Nosotros', href: '#nosotros' },
-    { name: 'Contacto', href: '#contacto' },
   ];
 
   return (
     <>
       <header 
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-main/95 backdrop-blur-md shadow-sm py-4 border-b border-border/50' : 'bg-transparent py-6'
+        className={`fixed left-0 w-full z-50 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] px-6 lg:px-12 ${
+          isScrolled ? 'top-4 lg:top-6' : 'top-6 lg:top-10'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
-          <a href="#inicio" className="flex items-center gap-4 z-50">
+        <div 
+          className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-8 py-3 lg:py-4 transition-all duration-700"
+          style={{
+            background: 'rgba(37, 37, 37, 0.45)',
+            backdropFilter: isScrolled ? 'blur(20px)' : 'blur(14px)',
+            WebkitBackdropFilter: isScrolled ? 'blur(20px)' : 'blur(14px)',
+            border: '1px solid rgba(250, 247, 242, 0.16)',
+            borderRadius: '14px'
+          }}
+        >
+          
+          {/* Bloque Izquierdo: Logo */}
+          <a href="#inicio" className="flex items-center gap-3 transition-transform hover:scale-[1.02]">
             <img 
               src="/src/assets/logo/angarlogo.png" 
               alt="ANGAR Logo" 
-              className="h-12 lg:h-16 w-auto object-contain transition-all duration-300"
+              className="h-8 lg:h-10 w-auto object-contain brightness-0 invert"
             />
-            <div className="flex flex-col justify-center mt-1">
-              <span className="font-semibold uppercase tracking-[0.18em] text-2xl lg:text-3xl text-main leading-none">
+            <div className="flex flex-col justify-center mt-0.5">
+              <span className="font-semibold uppercase tracking-[0.18em] text-lg lg:text-xl text-[#FAF7F2] leading-none">
                 ANGAR
-              </span>
-              <span className="text-[10px] lg:text-[11px] text-muted uppercase tracking-[0.18em] mt-1.5 font-medium">
-                Construcción e Inmobiliaria
               </span>
             </div>
           </a>
 
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              link.dropdown ? (
-                <div 
-                  key={link.name} 
-                  className="relative group"
-                  onMouseEnter={() => setIsInmobiliariaOpen(true)}
-                  onMouseLeave={() => setIsInmobiliariaOpen(false)}
-                >
-                  <a 
-                    href={link.href}
-                    className="flex items-center gap-1 text-lg font-semibold text-main hover:text-brand transition-colors tracking-wide drop-shadow-sm"
-                  >
-                    {link.name}
-                    <ChevronDown size={18} className={`transition-transform duration-300 ${isInmobiliariaOpen ? 'rotate-180' : ''}`} />
-                  </a>
-                  
-                  <div className={`absolute top-full left-0 mt-2 w-56 bg-main border border-border rounded-xl shadow-lg overflow-hidden transition-all duration-300 transform origin-top-left ${isInmobiliariaOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}>
-                    <div className="py-2">
-                      {link.dropdown.map((dropLink, idx) => (
-                        <a 
-                          key={idx} 
-                          href={dropLink.href}
-                          className="block px-6 py-3 text-main hover:bg-soft hover:text-brand transition-colors font-medium tracking-wide"
-                        >
-                          {dropLink.name}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ) : (
+          {/* Bloque Derecho: Teléfono, Menú, Botón */}
+          <div className="flex items-center gap-6 lg:gap-8">
+            
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center gap-8">
+              {navLinks.map((link) => (
                 <a 
                   key={link.name} 
                   href={link.href}
-                  className="text-lg font-semibold text-main hover:text-brand transition-colors tracking-wide drop-shadow-sm"
+                  className="text-[14px] lg:text-[15px] font-medium text-[#FAF7F2] hover:text-brand transition-colors tracking-[0.02em]"
                 >
                   {link.name}
                 </a>
-              )
-            ))}
-          </nav>
+              ))}
+            </nav>
 
-          {/* Mobile Menu Toggle */}
-          <button 
-            className="lg:hidden z-50 p-2 text-main"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle Menu"
-          >
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+            <div className="hidden lg:flex items-center gap-2 text-[#FAF7F2]">
+              <Phone size={16} className="text-brand" />
+              <span className="text-[14px] font-medium tracking-[0.02em]">+52 999 123 4567</span>
+            </div>
+
+            <a 
+              href="#contacto"
+              className="hidden md:flex items-center justify-center bg-[#FAF7F2] text-[#252525] font-medium text-[14px] tracking-[0.03em] uppercase rounded-[12px] px-[24px] py-[14px] hover:-translate-y-0.5 transition-transform duration-300"
+            >
+              Agendar Visita
+            </a>
+
+            {/* Mobile Menu Toggle */}
+            <button 
+              className="lg:hidden text-[#FAF7F2] flex flex-col items-center justify-center gap-1.5 w-10 h-10"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle Menu"
+            >
+              {isMobileMenuOpen ? (
+                <X size={26} />
+              ) : (
+                <>
+                  <span className="w-6 h-[2px] bg-[#FAF7F2] rounded-full"></span>
+                  <span className="w-6 h-[2px] bg-[#FAF7F2] rounded-full"></span>
+                </>
+              )}
+            </button>
+
+          </div>
+
         </div>
       </header>
 

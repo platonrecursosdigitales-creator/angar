@@ -6,20 +6,20 @@
 
 @layer base {
   :root {
-    --font-main: 'Manrope', sans-serif;
+  --font-main: 'Roboto', sans-serif;
 
-    --bg-main: #FAF7F2;
-    --bg-soft: #EFE5D8;
-    --bg-alt: #E8DCCF;
+  --bg-main: #FAF7F2;
+  --bg-soft: #EFE5D8;
+  --bg-alt: #E8DCCF;
 
-    --brand: #D96A2B;
-    --brand-dark: #C95F2C;
-    --accent: #E89A6A;
+  --brand: #D96A2B;
+  --brand-dark: #C95F2C;
+  --accent: #E89A6A;
 
-    --text-main: #252525;
-    --text-muted: #7B746C;
-    --border: #D8CDC1;
-  }
+  --text-main: #252525;
+  --text-muted: #7B746C;
+  --border: #D8CDC1;
+}
 
   html {
     scroll-behavior: smooth;

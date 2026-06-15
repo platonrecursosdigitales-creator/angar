@@ -14,7 +14,7 @@ export default {
         accent: 'var(--accent)',
       },
       fontFamily: {
-        sans: ['var(--font-main)', 'sans-serif'],
+        sans: ['Roboto', 'sans-serif'],
       },
       backgroundColor: {
         main: 'var(--bg-main)',
