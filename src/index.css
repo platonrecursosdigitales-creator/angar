@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-main: 'Manrope', sans-serif;
+
+    --bg-main: #FAF7F2;
+    --bg-soft: #EFE5D8;
+    --bg-alt: #E8DCCF;
+
+    --brand: #D96A2B;
+    --brand-dark: #C95F2C;
+    --accent: #E89A6A;
+
+    --text-main: #252525;
+    --text-muted: #7B746C;
+    --border: #D8CDC1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-main);
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    @apply antialiased selection:bg-brand selection:text-white;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
