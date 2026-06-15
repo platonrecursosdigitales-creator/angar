@@ -112,7 +112,7 @@ export const ConstructionSection: React.FC = () => {
             className="lg:col-span-7 h-[600px] lg:h-auto min-h-[800px] relative rounded-3xl overflow-hidden"
           >
             <img 
-              src="/assets/images/1.jpeg" 
+              src="/images/1.jpeg" 
               alt="Construcción y obra civil de alto nivel" 
               className="absolute inset-0 w-full h-full object-cover"
             />

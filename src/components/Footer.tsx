@@ -6,7 +6,7 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
         <div>
           <img 
-            src="/assets/logo/angarlogo.png" 
+            src="/logo/angarlogo.png" 
             alt="ANGAR Logo" 
             className="h-10 w-auto object-contain mb-6"
           />

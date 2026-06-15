@@ -8,7 +8,7 @@ export const AboutSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative h-[500px] lg:h-[700px] w-full rounded-3xl overflow-hidden border border-border order-2 lg:order-1">
             <img 
-              src="/assets/images/6.jpeg" 
+              src="/images/6.jpeg" 
               alt="Sobre ANGAR" 
               className="w-full h-full object-cover"
             />

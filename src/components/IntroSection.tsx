@@ -78,7 +78,7 @@ export const IntroSection: React.FC = () => {
               className="w-full aspect-[4/3] lg:aspect-[16/11] overflow-hidden rounded-[16px]"
             >
               <img 
-                src="/assets/images/residencia_intro.png" 
+                src="/images/residencia_intro.png" 
                 alt="Arquitectura residencial moderna" 
                 className="w-full h-full object-cover scale-[1.03] hover:scale-100 transition-transform duration-1000"
               />
