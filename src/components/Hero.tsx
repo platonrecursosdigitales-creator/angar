@@ -41,15 +41,21 @@ export const Hero: React.FC = () => {
             </span>
           </motion.div>
 
-          <motion.h1 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: customEase, delay: 0.2 }}
-            className="text-[38px] md:text-[58px] lg:text-[84px] font-bold text-[#FAF7F2] mb-6 lg:mb-8"
-            style={{ lineHeight: 1.02, letterSpacing: '-0.045em' }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mb-8 relative z-10"
           >
-            Construcción e inmobiliaria bajo una misma visión
-          </motion.h1>
+            <h1 className="flex flex-col gap-2">
+              <span className="text-[52px] md:text-[72px] lg:text-[96px] font-bold text-white leading-[1.05] tracking-tight">
+                Constructora e<br />inmobiliaria
+              </span>
+              <span className="text-[32px] md:text-[48px] lg:text-[64px] font-bold text-white/90 leading-[1.1] tracking-tight mt-2 lg:mt-4">
+                bajo una misma visión
+              </span>
+            </h1>
+          </motion.div>
 
           <motion.p 
             initial={{ opacity: 0, y: 30 }}
