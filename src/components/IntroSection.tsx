@@ -41,14 +41,15 @@ export const IntroSection: React.FC = () => {
     <section id="nosotros" className="relative py-24 lg:py-[160px] bg-main overflow-hidden">
       
       {/* Fondo Visual Animado (Marquee) */}
-      <div className="absolute top-0 left-0 w-full h-[600px] lg:h-[700px] opacity-40 lg:opacity-30 pointer-events-none z-0 overflow-hidden">
-        {/* Overlays para fundir con el fondo y teñir */}
-        <div className="absolute inset-0 bg-brand mix-blend-multiply opacity-20 z-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-main/30 via-main/90 to-main z-10"></div>
+      <div className="absolute top-0 left-0 w-full h-[600px] lg:h-[700px] pointer-events-none z-0 overflow-hidden">
+        {/* Overlays para fundir con el fondo y teñir. Reducimos drasticamente la opacidad visual */}
+        <div className="absolute inset-0 bg-brand mix-blend-color z-10 opacity-40"></div>
+        <div className="absolute inset-0 bg-main opacity-85 z-20"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-main/95 to-main z-20"></div>
         
-        <div className="flex w-max animate-marquee filter blur-[2px]">
+        <div className="flex w-max h-[400px] lg:h-[500px] animate-marquee filter blur-[3px] opacity-30 grayscale">
           {[...marqueeImages, ...marqueeImages, ...marqueeImages].map((src, idx) => (
-            <div key={idx} className="w-[300px] lg:w-[450px] h-[400px] lg:h-[500px] shrink-0 mx-4 lg:mx-8 rounded-3xl overflow-hidden">
+            <div key={idx} className="w-[300px] lg:w-[450px] h-full shrink-0">
               <img src={src} alt="" className="w-full h-full object-cover" loading="lazy" aria-hidden="true" />
             </div>
           ))}
@@ -65,9 +66,13 @@ export const IntroSection: React.FC = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: customEase }}
           >
-            <span className="inline-block uppercase text-brand mb-6 font-bold text-[13px] tracking-[0.12em]">
-              NOSOTROS
-            </span>
+            <div className="inline-flex items-center gap-3 mb-6">
+              <div className="w-8 h-[2px] bg-brand/60"></div>
+              <span className="uppercase text-brand font-bold text-[13px] tracking-[0.15em]">
+                Nosotros
+              </span>
+              <div className="w-8 h-[2px] bg-brand/60"></div>
+            </div>
           </motion.div>
 
           <motion.h2
@@ -75,7 +80,7 @@ export const IntroSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: customEase, delay: 0.1 }}
-            className="text-[36px] md:text-[46px] lg:text-[56px] font-bold text-main mb-8 leading-[1.1] tracking-[-0.035em] text-balance"
+            className="text-[38px] md:text-[50px] lg:text-[62px] font-bold text-main mb-8 leading-[1.05] tracking-[-0.035em] text-balance mx-auto"
           >
             Construcción, obra civil e inmobiliaria bajo una misma visión
           </motion.h2>
@@ -85,7 +90,7 @@ export const IntroSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: customEase, delay: 0.2 }}
-            className="text-[18px] lg:text-[22px] text-muted font-medium leading-[1.65] text-balance mx-auto max-w-3xl"
+            className="text-[18px] lg:text-[22px] text-muted font-medium leading-[1.7] text-balance mx-auto max-w-3xl"
           >
             ANGAR integra experiencia constructiva, obra civil, gestión documental y comercialización inmobiliaria para ofrecer soluciones completas a quienes buscan construir, transformar, comprar, vender o invertir en una propiedad.
           </motion.p>
@@ -97,9 +102,9 @@ export const IntroSection: React.FC = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, ease: customEase, delay: 0.2 }}
-          className="bg-alt border-t-4 border-brand rounded-[24px] lg:rounded-[32px] p-8 lg:p-14 mb-20 lg:mb-32 shadow-sm max-w-5xl mx-auto"
+          className="bg-white border border-border/40 border-t-4 border-t-brand rounded-[24px] lg:rounded-[32px] p-8 lg:p-14 mb-20 lg:mb-32 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.06)] max-w-5xl mx-auto"
         >
-          <p className="text-[20px] lg:text-[26px] text-main font-semibold leading-[1.5] text-balance text-center">
+          <p className="text-[20px] lg:text-[26px] text-main font-semibold leading-[1.6] text-balance text-center max-w-4xl mx-auto">
             “Cada proyecto requiere claridad antes de avanzar: planeación, permisos, ejecución, seguimiento y una gestión ordenada. Por eso trabajamos con una visión integral que conecta la parte técnica de la obra con las decisiones inmobiliarias que dan valor a cada propiedad.”
           </p>
         </motion.div>
@@ -113,12 +118,12 @@ export const IntroSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, ease: customEase, delay: 0.1 + (index * 0.15) }}
-              className="group relative flex flex-col bg-main/80 backdrop-blur-sm border border-border p-8 lg:p-10 rounded-[28px] transition-all duration-500 hover:border-brand/40 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] hover:-translate-y-1 focus-within:border-brand/40 outline-none"
+              className="group relative flex flex-col bg-white/70 backdrop-blur-sm border border-border/60 p-8 lg:p-10 rounded-[28px] transition-all duration-500 hover:bg-white hover:border-brand/40 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] hover:-translate-y-1 focus-within:border-brand/40 outline-none"
               tabIndex={0}
             >
               <div className="flex items-center gap-4 mb-8">
                 <span className="text-brand font-bold text-lg tracking-wider">{item.num}</span>
-                <div className="h-[1px] flex-grow bg-border group-hover:bg-brand/30 transition-colors duration-500"></div>
+                <div className="h-[1px] flex-grow bg-border/60 group-hover:bg-brand/30 transition-colors duration-500"></div>
               </div>
               
               <h3 className="text-main mb-4 font-bold text-[26px] lg:text-[28px] leading-[1.15]">
