@@ -47,13 +47,19 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-8 relative z-10"
           >
-            <h1 className="flex flex-col gap-2">
-              <span className="text-[52px] md:text-[72px] lg:text-[96px] font-bold text-white leading-[1.05] tracking-tight">
-                Constructora e<br />inmobiliaria
+            <h1 className="flex flex-col">
+              <span className="text-[56px] md:text-[76px] lg:text-[100px] font-bold text-white leading-[1.05] tracking-tighter">
+                Constructora e
               </span>
-              <span className="text-[32px] md:text-[48px] lg:text-[64px] font-bold text-white/90 leading-[1.1] tracking-tight mt-2 lg:mt-4">
-                bajo una misma visión
+              <span className="text-[56px] md:text-[76px] lg:text-[100px] font-bold text-[#D96A2B] leading-[1.05] tracking-tighter mb-2 lg:mb-4">
+                Inmobiliaria
               </span>
+              <div className="flex items-center gap-4 lg:gap-6 mt-2">
+                <div className="hidden md:block w-12 lg:w-20 h-[2px] bg-[#D96A2B]"></div>
+                <span className="text-[32px] md:text-[44px] lg:text-[56px] font-light text-white/90 leading-[1.1] tracking-tight">
+                  bajo una misma visión
+                </span>
+              </div>
             </h1>
           </motion.div>
 
