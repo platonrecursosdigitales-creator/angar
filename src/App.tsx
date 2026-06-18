@@ -42,7 +42,7 @@ function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-main text-main font-sans selection:bg-brand selection:text-white overflow-x-hidden">
+    <div className="relative min-h-screen bg-main text-main font-sans selection:bg-brand selection:text-white overflow-x-clip">
       <Header />
       <main>
         <Hero />

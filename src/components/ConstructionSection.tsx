@@ -1,8 +1,18 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { SectionLabel } from './SectionLabel';
 
 export const ConstructionSection: React.FC = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev === 0 ? 1 : 0));
+    }, 6000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section id="construccion" className="py-24 lg:py-32 bg-main relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -21,12 +31,22 @@ export const ConstructionSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-[-0.03em] uppercase leading-[1.05] text-main mb-16"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-[-0.035em] leading-[1.1] text-main mb-6"
             >
-              Construcción y Obra Civil
+              Construcción y obra civil para vivienda
             </motion.h2>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+              className="text-muted text-[18px] lg:text-[20px] font-medium leading-[1.65] mb-12"
+            >
+              Desarrollamos vivienda nueva, remodelaciones y ampliaciones con planeación técnica, gestión de permisos y ejecución ordenada hasta la entrega.
+            </motion.p>
 
-            <div className="space-y-12">
+            <div className="space-y-12 lg:space-y-8">
               
               <motion.div 
                 initial={{ opacity: 0, x: -20 }}
@@ -34,11 +54,11 @@ export const ConstructionSection: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wide text-brand mb-3">
-                  Proyectos Residenciales
+                <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wide text-brand mb-2">
+                  Vivienda desde cero
                 </h3>
-                <p className="text-muted text-lg leading-relaxed">
-                  Planeación y ejecución integral de viviendas de alto nivel con enfoque técnico y funcional.
+                <p className="text-muted text-lg font-medium leading-[1.65]">
+                  Construimos proyectos habitacionales desde la cimentación hasta la entrega, siguiendo el proyecto acordado y cuidando cada etapa de obra.
                 </p>
               </motion.div>
 
@@ -48,11 +68,11 @@ export const ConstructionSection: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wide text-[#C95F2C] mb-3">
-                  Obra Civil y Comercial
+                <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wide text-brand mb-2">
+                  Obra civil
                 </h3>
-                <p className="text-muted text-lg leading-relaxed">
-                  Desarrollo de espacios comerciales y estructuras complejas con eficiencia técnica.
+                <p className="text-muted text-lg font-medium leading-[1.65]">
+                  Coordinamos trabajos estructurales, albañilería, instalaciones y procesos constructivos con seguimiento técnico y orden de ejecución.
                 </p>
               </motion.div>
 
@@ -62,11 +82,11 @@ export const ConstructionSection: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wide text-[#D96A2B] opacity-80 mb-3">
-                  Remodelaciones y Acabados
+                <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wide text-brand mb-2">
+                  Remodelación y ampliación
                 </h3>
-                <p className="text-muted text-lg leading-relaxed">
-                  Transformación de espacios y atención exhaustiva al detalle y la calidad de los materiales.
+                <p className="text-muted text-lg font-medium leading-[1.65]">
+                  Intervenimos viviendas existentes, ampliamos espacios, desarrollamos segundos o terceros niveles y mejoramos la funcionalidad del inmueble.
                 </p>
               </motion.div>
 
@@ -76,11 +96,11 @@ export const ConstructionSection: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
-                <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wide text-muted mb-3">
-                  Preparación de Terrenos
+                <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wide text-brand mb-2">
+                  Permisos, instalaciones y entrega
                 </h3>
-                <p className="text-muted text-lg leading-relaxed">
-                  Movimientos de tierra, cimentaciones y adecuación precisa para el arranque de obra.
+                <p className="text-muted text-lg font-medium leading-[1.65]">
+                  Preparamos la gestión ante autoridades, coordinamos servicios y cuidamos los detalles finales para entregar espacios habitables.
                 </p>
               </motion.div>
               
@@ -95,7 +115,7 @@ export const ConstructionSection: React.FC = () => {
             >
               <a 
                 href="#contacto" 
-                className="inline-block bg-[#C95F2C] text-[#FAF7F2] font-semibold tracking-wider uppercase px-10 py-5 rounded-sm hover:bg-[#D96A2B] transition-colors duration-300"
+                className="inline-block bg-brand text-[#FAF7F2] font-bold tracking-wider uppercase px-10 py-5 rounded-sm hover:bg-brand-dark transition-colors duration-300"
               >
                 Agendar Cita
               </a>
@@ -103,19 +123,40 @@ export const ConstructionSection: React.FC = () => {
 
           </div>
 
-          {/* Lado Derecho: Imagen Gigante */}
+          {/* Lado Derecho: Imagen Gigante con Sistema de Alternancia */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: "easeOut" }}
-            className="lg:col-span-7 h-[600px] lg:h-auto min-h-[800px] relative rounded-3xl overflow-hidden"
+            className="lg:col-span-7 h-[600px] lg:h-auto min-h-[800px] relative rounded-3xl overflow-hidden bg-alt"
           >
-            <img 
-              src="/images/1.jpeg" 
-              alt="Construcción y obra civil de alto nivel" 
-              className="absolute inset-0 w-full h-full object-cover"
-            />
+            <AnimatePresence>
+              {currentImage === 0 && (
+                <motion.img 
+                  key="img1"
+                  src="/images/construction_1.png" 
+                  alt="Etapa estructural de vivienda" 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              )}
+              {currentImage === 1 && (
+                <motion.img 
+                  key="img2"
+                  src="/images/construction_2.png" 
+                  alt="Avance y entrega de vivienda" 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              )}
+            </AnimatePresence>
           </motion.div>
 
         </div>

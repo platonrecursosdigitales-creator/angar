@@ -17,34 +17,34 @@ export const AboutSection: React.FC = () => {
           <div className="order-1 lg:order-2">
             <SectionLabel text="Nosotros" />
             
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.025em] leading-[1.15] text-main mb-8">
-              Construcción, obra civil e inmobiliaria
+            <h2 className="text-4xl md:text-5xl font-bold tracking-[-0.025em] leading-[1.15] text-main mb-8">
+              Una visión clara para cada propiedad
             </h2>
             
-            <p className="text-xl text-muted mb-16 leading-[1.65]">
-              ANGAR es una empresa enfocada en construcción, obra civil y comercialización inmobiliaria. Su trabajo combina atención directa, visión técnica y conocimiento del mercado local para acompañar proyectos de construcción, compra, venta e inversión en propiedades.
+            <p className="text-xl text-muted font-medium mb-16 leading-[1.65]">
+              ANGAR nace para acompañar proyectos de construcción, remodelación e inmobiliaria con orden, atención directa y seguimiento profesional.
             </p>
 
             <div className="space-y-10">
               <div className="flex gap-6">
                 <div className="mt-1 w-12 h-[1px] bg-brand shrink-0"></div>
                 <div>
-                  <h3 className="text-xl font-medium tracking-[-0.01em] leading-[1.4] text-main mb-3">Enfoque técnico</h3>
-                  <p className="text-muted leading-[1.65]">Cada proyecto requiere orden, planeación y seguimiento.</p>
+                  <h3 className="text-xl font-bold tracking-[-0.01em] leading-[1.4] text-brand mb-3">Enfoque técnico</h3>
+                  <p className="text-muted font-medium leading-[1.65]">Cada proyecto requiere orden, planeación y seguimiento.</p>
                 </div>
               </div>
               <div className="flex gap-6">
                 <div className="mt-1 w-12 h-[1px] bg-brand shrink-0"></div>
                 <div>
-                  <h3 className="text-xl font-medium tracking-[-0.01em] leading-[1.4] text-main mb-3">Atención directa</h3>
-                  <p className="text-muted leading-[1.65]">Comunicación clara durante el proceso de construcción o compra.</p>
+                  <h3 className="text-xl font-bold tracking-[-0.01em] leading-[1.4] text-brand mb-3">Atención directa</h3>
+                  <p className="text-muted font-medium leading-[1.65]">Comunicación clara durante el proceso de construcción o compra.</p>
                 </div>
               </div>
               <div className="flex gap-6">
                 <div className="mt-1 w-12 h-[1px] bg-brand shrink-0"></div>
                 <div>
-                  <h3 className="text-xl font-medium tracking-[-0.01em] leading-[1.4] text-main mb-3">Visión inmobiliaria</h3>
-                  <p className="text-muted leading-[1.65]">Propiedades, terrenos y casas con orientación comercial y patrimonial.</p>
+                  <h3 className="text-xl font-bold tracking-[-0.01em] leading-[1.4] text-brand mb-3">Visión inmobiliaria</h3>
+                  <p className="text-muted font-medium leading-[1.65]">Propiedades, terrenos y casas con orientación comercial y patrimonial.</p>
                 </div>
               </div>
             </div>

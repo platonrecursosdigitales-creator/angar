@@ -71,14 +71,14 @@ export const RealEstateSection: React.FC = () => {
               className="text-main mb-6"
               style={{ fontWeight: 400, fontSize: 'clamp(34px, 4vw, 56px)', letterSpacing: '-0.04em', lineHeight: 1.05 }}
             >
-              Desarrollos
+              Nuestros proyectos
             </h2>
             <div className="w-12 h-[2px] bg-border mx-auto mb-6"></div>
             <p 
               className="text-muted max-w-[600px] mx-auto"
               style={{ fontWeight: 400, fontSize: '19px', lineHeight: 1.5 }}
             >
-              Proyectos residenciales e inmobiliarios con visión integral.
+              Construcción, remodelación y propiedad vistas desde una misma visión.
             </p>
           </motion.div>
         </div>

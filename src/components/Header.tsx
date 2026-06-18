@@ -31,7 +31,7 @@ export const Header: React.FC = () => {
         <div 
           className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-8 py-3 lg:py-4 transition-all duration-700"
           style={{
-            background: 'rgba(37, 37, 37, 0.45)',
+            background: 'rgba(37, 37, 37, 0.65)',
             backdropFilter: isScrolled ? 'blur(20px)' : 'blur(14px)',
             WebkitBackdropFilter: isScrolled ? 'blur(20px)' : 'blur(14px)',
             border: '1px solid rgba(250, 247, 242, 0.16)',
@@ -62,7 +62,7 @@ export const Header: React.FC = () => {
                 <a 
                   key={link.name} 
                   href={link.href}
-                  className="text-[14px] lg:text-[15px] font-medium text-[#FAF7F2] hover:text-brand transition-colors tracking-[0.02em]"
+                  className="text-[14px] lg:text-[15px] font-semibold text-[#FAF7F2] hover:text-brand transition-colors tracking-[0.02em]"
                 >
                   {link.name}
                 </a>
@@ -71,12 +71,12 @@ export const Header: React.FC = () => {
 
             <div className="hidden lg:flex items-center gap-2 text-[#FAF7F2]">
               <Phone size={16} className="text-brand" />
-              <span className="text-[14px] font-medium tracking-[0.02em]">+52 999 123 4567</span>
+              <span className="text-[14px] font-semibold tracking-[0.02em]">+52 999 123 4567</span>
             </div>
 
             <a 
               href="#contacto"
-              className="hidden md:flex items-center justify-center bg-[#FAF7F2] text-[#252525] font-medium text-[14px] tracking-[0.03em] uppercase rounded-[12px] px-[24px] py-[14px] hover:-translate-y-0.5 transition-transform duration-300"
+              className="hidden md:flex items-center justify-center bg-[#FAF7F2] text-[#252525] font-bold text-[14px] tracking-[0.03em] uppercase rounded-[12px] px-[24px] py-[14px] hover:-translate-y-0.5 transition-transform duration-300"
             >
               Agendar Visita
             </a>

@@ -9,33 +9,33 @@ export const ContactSection: React.FC = () => {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-1.5 h-1.5 rounded-full bg-brand"></div>
-              <span className="text-sm font-semibold tracking-widest uppercase text-white/60">
+              <span className="text-sm font-bold tracking-widest uppercase text-brand">
                 Contacto
               </span>
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.025em] leading-[1.15] text-[#FAF7F2] mb-8">
-              Hablemos de tu proyecto o propiedad
+            <h2 className="text-4xl md:text-5xl font-bold tracking-[-0.025em] leading-[1.15] text-[#FAF7F2] mb-8">
+              Cuéntanos qué quieres hacer con tu propiedad
             </h2>
             
-            <p className="text-xl text-white/70 mb-12 leading-[1.65]">
-              Ya sea que quieras construir, comprar una casa, vender una propiedad o conocer terrenos disponibles, ANGAR puede orientarte de forma directa.
+            <p className="text-xl text-[#FAF7F2]/90 font-medium mb-12 leading-[1.65]">
+              Construir, remodelar, vender o comprar empieza con una conversación clara.
             </p>
 
             <div className="space-y-6 mb-12">
-              <a href="https://wa.me/5211234567890" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-white/80 hover:text-brand transition-colors group">
+              <a href="https://wa.me/5211234567890" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-[#FAF7F2]/95 font-medium hover:text-brand transition-colors group">
                 <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-brand/20 transition-colors">
                   <MessageCircle size={20} className="text-brand" />
                 </div>
                 <span className="text-lg">WhatsApp: +52 1 123 456 7890</span>
               </a>
-              <a href="tel:+5211234567890" className="flex items-center gap-4 text-white/80 hover:text-brand transition-colors group">
+              <a href="tel:+5211234567890" className="flex items-center gap-4 text-[#FAF7F2]/95 font-medium hover:text-brand transition-colors group">
                 <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-brand/20 transition-colors">
                   <Phone size={20} className="text-brand" />
                 </div>
                 <span className="text-lg">Llamar: +52 1 123 456 7890</span>
               </a>
-              <a href="mailto:contacto@angar.com" className="flex items-center gap-4 text-white/80 hover:text-brand transition-colors group">
+              <a href="mailto:contacto@angar.com" className="flex items-center gap-4 text-[#FAF7F2]/95 font-medium hover:text-brand transition-colors group">
                 <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-brand/20 transition-colors">
                   <Mail size={20} className="text-brand" />
                 </div>
@@ -47,7 +47,7 @@ export const ContactSection: React.FC = () => {
           <div className="bg-[#FAF7F2] p-8 lg:p-12 rounded-[32px]">
             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-main mb-2">Nombre completo</label>
+                <label htmlFor="name" className="block text-sm font-bold text-main mb-2">Nombre completo</label>
                 <input 
                   type="text" 
                   id="name" 
@@ -57,7 +57,7 @@ export const ContactSection: React.FC = () => {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-main mb-2">Teléfono</label>
+                  <label htmlFor="phone" className="block text-sm font-bold text-main mb-2">Teléfono</label>
                   <input 
                     type="tel" 
                     id="phone" 
@@ -66,7 +66,7 @@ export const ContactSection: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="interest" className="block text-sm font-medium text-main mb-2">Interés</label>
+                  <label htmlFor="interest" className="block text-sm font-bold text-main mb-2">Interés</label>
                   <select 
                     id="interest" 
                     className="w-full px-4 py-3 rounded-xl border border-[#D8CDC1] bg-transparent focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors text-main"
@@ -81,7 +81,7 @@ export const ContactSection: React.FC = () => {
                 </div>
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-main mb-2">Mensaje</label>
+                <label htmlFor="message" className="block text-sm font-bold text-main mb-2">Mensaje</label>
                 <textarea 
                   id="message" 
                   rows={4}
@@ -91,9 +91,9 @@ export const ContactSection: React.FC = () => {
               </div>
               <button 
                 type="submit" 
-                className="w-full bg-[#D96A2B] text-[#FAF7F2] hover:bg-[#C95F2C] rounded-full px-8 py-4 font-medium tracking-wide transition-all duration-300"
+                className="w-full bg-brand text-[#FAF7F2] hover:bg-brand-dark rounded-full px-8 py-4 font-bold tracking-wide transition-all duration-300"
               >
-                Enviar mensaje
+                Solicitar asesoría
               </button>
             </form>
           </div>

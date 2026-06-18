@@ -10,10 +10,10 @@ export const CreditsSection: React.FC = () => {
         </div>
         
         <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.025em] leading-[1.15] text-main mb-6">
-          Créditos aceptados
+          Orientación para comprar con respaldo
         </h2>
         <p className="text-lg text-muted mb-16 max-w-2xl mx-auto leading-[1.65]">
-          En las propiedades disponibles se pueden aceptar diferentes esquemas de crédito, incluyendo Infonavit, Fovissste, créditos bancarios, créditos para pensionados y recursos propios.
+          Acompañamos procesos relacionados con INFONAVIT, FOVISSSTE y alternativas de adquisición, revisando la viabilidad y la documentación necesaria para avanzar.
         </p>
 
         <div className="flex flex-wrap justify-center gap-6">
@@ -27,8 +27,8 @@ export const CreditsSection: React.FC = () => {
           ))}
         </div>
         
-        <p className="text-sm text-muted mt-12 tracking-wide">
-          Sujeto a validación de la propiedad y perfil del comprador.
+        <p className="text-sm text-muted mt-12 tracking-wide font-medium">
+          Servicio con conocimiento certificado en procesos INFONAVIT.
         </p>
       </div>
     </section>

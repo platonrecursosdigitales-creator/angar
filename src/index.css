@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-  --font-main: 'Roboto', sans-serif;
+  --font-main: 'Manrope', sans-serif;
 
   --bg-main: #FAF7F2;
   --bg-soft: #EFE5D8;
@@ -17,7 +17,7 @@
   --accent: #E89A6A;
 
   --text-main: #252525;
-  --text-muted: #7B746C;
+  --text-muted: #5F5952;
   --border: #D8CDC1;
 }
 

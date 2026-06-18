@@ -19,7 +19,7 @@ export const IntroSection: React.FC = () => {
             >
               <span 
                 className="block uppercase text-brand mb-6"
-                style={{ fontWeight: 500, fontSize: '13px', letterSpacing: '0.12em' }}
+                style={{ fontWeight: 700, fontSize: '13px', letterSpacing: '0.12em' }}
               >
                 VISIÓN INTEGRAL
               </span>
@@ -30,10 +30,10 @@ export const IntroSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: customEase, delay: 0.1 }}
-              className="text-[34px] md:text-[42px] lg:text-[62px] font-light text-main mb-8"
+              className="text-[34px] md:text-[42px] lg:text-[62px] font-bold text-main mb-8"
               style={{ lineHeight: 1.02, letterSpacing: '-0.045em' }}
             >
-              Construcción e inmobiliaria bajo una misma visión
+              Una forma más clara de construir, transformar o vender
             </motion.h2>
 
             <motion.p
@@ -42,9 +42,9 @@ export const IntroSection: React.FC = () => {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: customEase, delay: 0.2 }}
               className="text-[18px] lg:text-[22px] text-muted mb-12 max-w-[600px]"
-              style={{ fontWeight: 400, lineHeight: 1.55 }}
+              style={{ fontWeight: 500, lineHeight: 1.65 }}
             >
-              ANGAR integra experiencia constructiva, obra civil y comercialización inmobiliaria para ofrecer soluciones completas a quienes buscan construir, comprar, vender o invertir en una propiedad.
+              En ANGAR acompañamos proyectos de vivienda y propiedad con una visión completa: planeación, ejecución y gestión para avanzar con mayor claridad.
             </motion.p>
 
             <motion.div
@@ -56,7 +56,7 @@ export const IntroSection: React.FC = () => {
               <a 
                 href="#contacto"
                 className="inline-flex items-center text-brand uppercase hover:text-brand-dark transition-colors"
-                style={{ fontWeight: 500, fontSize: '14px', letterSpacing: '0.03em' }}
+                style={{ fontWeight: 700, fontSize: '14px', letterSpacing: '0.03em' }}
               >
                 Solicitar asesoría
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -87,9 +87,24 @@ export const IntroSection: React.FC = () => {
             {/* Lista Editorial de Servicios */}
             <div className="flex flex-col w-full">
               {[
-                { title: "Construcción", text: "Ejecución y desarrollo de proyectos residenciales y civiles con planeación, control y calidad constructiva." },
-                { title: "Inmobiliaria", text: "Comercialización de terrenos, casas nuevas y propiedades con enfoque estratégico y acompañamiento profesional." },
-                { title: "Asesoría", text: "Orientación en compra, venta, inversión y opciones de crédito para tomar decisiones más claras y seguras." }
+                { 
+                  title: "Construir", 
+                  text: "Viviendas nuevas y obra civil con planeación, estructura y seguimiento profesional.",
+                  image: "/images/hover-construir.png",
+                  alt: "Construcción habitacional en proceso con estructura y trabajo técnico ordenado"
+                },
+                { 
+                  title: "Transformar", 
+                  text: "Remodelaciones y ampliaciones pensadas para mejorar el uso, la imagen y el valor de cada espacio.",
+                  image: "/images/hover-transformar.png",
+                  alt: "Remodelación residencial con acabados y mejora de espacios"
+                },
+                { 
+                  title: "Gestionar", 
+                  text: "Acompañamiento inmobiliario y documental para tomar decisiones con mayor claridad.",
+                  image: "/images/hover-gestionar.png",
+                  alt: "Gestión inmobiliaria con documentos, planos y llaves sobre mesa de trabajo"
+                }
               ].map((item, index) => (
                 <motion.div 
                   key={index}
@@ -97,7 +112,8 @@ export const IntroSection: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.8, ease: customEase, delay: 0.3 + (index * 0.15) }}
-                  className="group relative flex flex-col py-8 lg:py-10 transition-transform duration-500 hover:-translate-y-1"
+                  className="group relative flex flex-col py-8 lg:py-10 transition-transform duration-500 hover:-translate-y-1 focus-within:-translate-y-1 outline-none"
+                  tabIndex={0}
                 >
                   {/* Línea Divisoria Superior */}
                   <motion.div 
@@ -109,21 +125,37 @@ export const IntroSection: React.FC = () => {
                   />
                   
                   {/* Acento Naranja */}
-                  <div className="w-8 h-[2px] bg-brand mb-5 transition-all duration-500 group-hover:w-14"></div>
+                  <div className="w-8 h-[2px] bg-brand mb-5 transition-all duration-500 group-hover:w-14 group-focus:w-14"></div>
                   
                   <h3 
                     className="text-main mb-3"
-                    style={{ fontWeight: 500, fontSize: '24px', lineHeight: 1.15 }}
+                    style={{ fontWeight: 700, fontSize: '24px', lineHeight: 1.15 }}
                   >
                     {item.title}
                   </h3>
                   
                   <p 
                     className="text-muted"
-                    style={{ fontWeight: 400, fontSize: '16px', lineHeight: 1.55, maxWidth: '520px' }}
+                    style={{ fontWeight: 500, fontSize: '16px', lineHeight: 1.65, maxWidth: '520px' }}
                   >
                     {item.text}
                   </p>
+
+                  {/* Imagen Expandible (Solo Desktop) */}
+                  <div 
+                    className="hidden lg:grid transition-all duration-[300ms] group-hover:duration-[450ms] group-focus:duration-[450ms] ease-[cubic-bezier(0.22,1,0.36,1)] grid-rows-[0fr] group-hover:grid-rows-[1fr] group-focus:grid-rows-[1fr] opacity-0 group-hover:opacity-100 group-focus:opacity-100 scale-[0.96] group-hover:scale-100 group-focus:scale-100 origin-top"
+                  >
+                    <div className="overflow-hidden">
+                      <div className="pt-6">
+                        <img 
+                          src={item.image}
+                          alt={item.alt}
+                          className="w-full h-[220px] object-cover rounded-[24px] border border-border bg-[#EFE5D8]"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
               

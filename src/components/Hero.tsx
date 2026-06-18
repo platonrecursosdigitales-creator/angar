@@ -34,10 +34,10 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.8, ease: customEase, delay: 0.1 }}
           >
             <span 
-              className="block font-medium uppercase text-[#EFE5D8] mb-4 lg:mb-6"
+              className="block font-bold uppercase text-[#EFE5D8] mb-4 lg:mb-6"
               style={{ fontSize: '13px', letterSpacing: '0.12em' }}
             >
-              CONSTRUCTORA RESIDENCIAL
+              CONSTRUCCIÓN E INMOBILIARIA
             </span>
           </motion.div>
 
@@ -45,20 +45,20 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: customEase, delay: 0.2 }}
-            className="text-[38px] md:text-[58px] lg:text-[84px] font-light text-[#FAF7F2] mb-6 lg:mb-8"
+            className="text-[38px] md:text-[58px] lg:text-[84px] font-bold text-[#FAF7F2] mb-6 lg:mb-8"
             style={{ lineHeight: 1.02, letterSpacing: '-0.045em' }}
           >
-            Construimos espacios pensados para vivir mejor
+            Construcción e inmobiliaria bajo una misma visión
           </motion.h1>
 
           <motion.p 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: customEase, delay: 0.35 }}
-            className="text-[17px] md:text-[22px] lg:text-[26px] font-medium text-[#FAF7F2] mb-10 lg:mb-12 max-w-[800px]"
+            className="text-[17px] md:text-[22px] lg:text-[26px] font-semibold text-[#FAF7F2] mb-10 lg:mb-12 max-w-[800px]"
             style={{ lineHeight: 1.3, letterSpacing: '-0.015em' }}
           >
-            Diseño, planeación y construcción con una visión clara: crear proyectos funcionales, cálidos y duraderos.
+            Diseñamos, construimos y acompañamos decisiones importantes alrededor de tu propiedad.
           </motion.p>
 
           <motion.div 
@@ -69,17 +69,17 @@ export const Hero: React.FC = () => {
           >
             <a 
               href="#contacto"
-              className="w-full sm:w-auto flex items-center justify-center bg-[#FAF7F2] text-[#252525] font-medium text-[14px] tracking-[0.03em] uppercase transition-transform hover:-translate-y-0.5"
+              className="w-full sm:w-auto flex items-center justify-center bg-[#FAF7F2] text-[#252525] font-bold text-[14px] tracking-[0.03em] uppercase transition-transform hover:-translate-y-0.5"
               style={{ padding: '16px 28px', borderRadius: '12px' }}
             >
-              Solicitar cotización
+              Solicitar asesoría
             </a>
             <a 
               href="#construccion"
-              className="w-full sm:w-auto flex items-center justify-center bg-[#D96A2B] text-[#FAF7F2] font-medium text-[14px] tracking-[0.03em] uppercase transition-all hover:-translate-y-0.5 hover:bg-[#C95F2C]"
+              className="w-full sm:w-auto flex items-center justify-center bg-[#D96A2B] text-[#FAF7F2] font-bold text-[14px] tracking-[0.03em] uppercase transition-all hover:-translate-y-0.5 hover:bg-[#C95F2C]"
               style={{ padding: '16px 28px', borderRadius: '12px' }}
             >
-              Ver proyectos
+              Conocer proyectos
             </a>
           </motion.div>
 

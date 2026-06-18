@@ -1,26 +1,26 @@
 export const services = [
   {
     id: 1,
-    title: "Proyecto residencial",
-    description: "Construcción de viviendas con atención en distribución, estructura, materiales y acabados para lograr espacios funcionales, habitables y duraderos.",
-    image: "/images/1.jpeg"
+    title: "Casas y terrenos",
+    description: "Apoyamos en procesos de venta y compra de propiedades, terrenos y viviendas, ordenando la información necesaria desde el inicio.",
+    image: "/images/1_new.png"
   },
   {
     id: 2,
-    title: "Obra civil",
-    description: "Soluciones para ejecución, preparación y seguimiento de obra, con una visión técnica enfocada en orden, seguridad y avance real del proyecto.",
-    image: "/images/2.jpeg"
+    title: "Análisis de valor",
+    description: "Revisamos ubicación, características y condiciones del inmueble para proponer un precio más cercano al mercado.",
+    image: "/images/2_new.png"
   },
   {
     id: 3,
-    title: "Remodelación y ampliación",
-    description: "Intervenciones para transformar espacios existentes, mejorar su uso y aumentar su valor sin perder coherencia constructiva.",
-    image: "/images/3.jpeg"
+    title: "Promoción inmobiliaria",
+    description: "Preparamos y difundimos la propiedad para conectar con compradores potenciales.",
+    image: "/images/3_new.png"
   },
   {
     id: 4,
-    title: "Acabados y entrega",
-    description: "Cuidado en los detalles finales del proyecto: materiales, terminaciones, limpieza visual y entrega funcional.",
-    image: "/images/4.jpeg"
+    title: "Gestión documental y notaría",
+    description: "Acompañamos el proceso documental hacia firma y orientamos en alternativas de adquisición como INFONAVIT y FOVISSSTE.",
+    image: "/images/4_new.png"
   }
 ];
