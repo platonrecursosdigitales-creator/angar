@@ -106,38 +106,45 @@ export const CreditsSection: React.FC = () => {
                   transition={{ duration: 0.6, ease: customEase, delay: 0.1 + (index * 0.1) }}
                   className="group relative"
                 >
-                  <div className="flex flex-wrap items-center justify-between gap-y-6 py-6 lg:py-8 px-2 transition-colors duration-500 hover:bg-soft/30 cursor-default">
-                    
-                    <div className="flex items-center gap-6 lg:gap-10 whitespace-nowrap mr-8">
-                      <span className="text-brand font-bold text-sm tracking-widest opacity-60">0{index + 1}</span>
-                      <span 
-                        className="text-[22px] lg:text-[28px] font-medium text-main group-hover:text-brand transition-colors duration-300"
-                        style={{ letterSpacing: '-0.01em' }}
-                      >
-                        {credit.name}
-                      </span>
+                  <div className="py-6 lg:py-8 px-2 transition-colors duration-500 hover:bg-soft/30 cursor-default group">
+                    <div className="grid grid-cols-[35px_1fr] lg:grid-cols-[50px_1fr_auto] gap-4 lg:gap-6 items-start lg:items-center">
+                      
+                      {/* Número */}
+                      <div className="pt-2 lg:pt-0">
+                        <span className="text-brand font-bold text-sm tracking-widest opacity-60">0{index + 1}</span>
+                      </div>
+
+                      {/* Contenido: Título y Logos */}
+                      <div className="flex flex-col justify-center">
+                        <span 
+                          className="text-[22px] lg:text-[28px] font-medium text-main group-hover:text-brand transition-colors duration-300"
+                          style={{ letterSpacing: '-0.01em' }}
+                        >
+                          {credit.name}
+                        </span>
+
+                        {/* Logos Alineados Exactamente debajo del Título */}
+                        {credit.logos.length > 0 && (
+                          <div className="flex flex-wrap items-center gap-6 lg:gap-10 mt-5 lg:mt-6">
+                            {credit.logos.map((logo, i) => (
+                              <img 
+                                key={i} 
+                                src={logo} 
+                                alt="Logo Oficial" 
+                                className="h-auto w-auto max-h-[28px] lg:max-h-[34px] max-w-[110px] lg:max-w-[140px] object-contain mix-blend-multiply opacity-90 grayscale-[20%] group-hover:grayscale-0 transition-all duration-300" 
+                                onError={(e) => e.currentTarget.style.display = 'none'}
+                              />
+                            ))}
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Acento visual (Alineado a la derecha en Desktop) */}
+                      <div className="hidden lg:flex justify-end items-center pl-8">
+                        <div className="w-8 h-[1px] bg-border group-hover:bg-brand group-hover:w-16 transition-all duration-500 ease-out"></div>
+                      </div>
+
                     </div>
-
-                    <div className="flex items-center gap-6 lg:gap-8 pl-[45px] sm:pl-[60px] lg:pl-0 lg:ml-auto">
-                      {/* Logos de instituciones */}
-                      {credit.logos.length > 0 && (
-                        <div className="flex items-center flex-wrap gap-6 lg:gap-8">
-                          {credit.logos.map((logo, i) => (
-                            <img 
-                              key={i} 
-                              src={logo} 
-                              alt="Logo Oficial" 
-                              className="h-auto w-auto max-h-[32px] lg:max-h-[40px] max-w-[100px] lg:max-w-[140px] object-contain mix-blend-multiply" 
-                              onError={(e) => e.currentTarget.style.display = 'none'}
-                            />
-                          ))}
-                        </div>
-                      )}
-
-                      {/* Acento visual en hover (solo visible en desktop) */}
-                      <div className="hidden lg:block w-8 h-[1px] bg-border group-hover:bg-brand group-hover:w-12 transition-all duration-500 ease-out shrink-0 ml-4"></div>
-                    </div>
-
                   </div>
                   
                   {/* Línea separadora inferior */}
