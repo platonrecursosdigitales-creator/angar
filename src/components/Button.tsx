@@ -24,7 +24,7 @@ export const Button: React.FC<ButtonProps> = ({
   const Component = href ? 'a' : 'button';
 
   return (
-    // @ts-ignore
+    // @ts-expect-error - Framer motion type definitions issue
     <Component 
       href={href}
       className={`${baseClasses} ${variants[variant]} ${className}`}
