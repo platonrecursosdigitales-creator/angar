@@ -7,7 +7,7 @@ export const Hero: React.FC = () => {
   return (
     <section 
       id="inicio" 
-      className="relative h-[90vh] lg:h-[94vh] min-h-[600px] max-h-[1200px] w-full flex items-end pb-12 lg:pb-24 overflow-hidden"
+      className="relative h-[90vh] lg:h-[94vh] min-h-[680px] max-h-[1200px] w-full flex items-center pt-[120px] lg:pt-[160px] pb-12 overflow-hidden"
     >
       {/* Background Image & Overlays */}
       <div 
