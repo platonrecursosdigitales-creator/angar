@@ -1,52 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { lands, houses } from '../data/properties';
 
 export const RealEstateSection: React.FC = () => {
   const customEase: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
-  const projects = [
-    {
-      id: 1,
-      title: "Altaria",
-      category: "Desarrollo Residencial",
-      image: "/images/proj_1.png",
-      gridClass: "col-span-12 md:col-span-4 md:row-span-2 min-h-[400px] md:min-h-full"
-    },
-    {
-      id: 2,
-      title: "Vía Terra",
-      category: "Residencial Premium",
-      image: "/images/proj_2.png",
-      gridClass: "col-span-12 md:col-span-8 min-h-[350px] md:min-h-[420px]"
-    },
-    {
-      id: 3,
-      title: "Monte Clara",
-      category: "Privada Residencial",
-      image: "/images/proj_3.png",
-      gridClass: "col-span-12 md:col-span-4 min-h-[350px] md:min-h-[420px]"
-    },
-    {
-      id: 4,
-      title: "Arboleda 27",
-      category: "Residencia",
-      image: "/images/proj_4.png",
-      gridClass: "col-span-12 md:col-span-4 min-h-[350px] md:min-h-[420px]"
-    },
-    {
-      id: 5,
-      title: "Áurea Residencial",
-      category: "Conjunto Privado",
-      image: "/images/proj_5.png",
-      gridClass: "col-span-12 md:col-span-7 min-h-[350px] md:min-h-[460px]"
-    },
-    {
-      id: 6,
-      title: "Casa Oliva",
-      category: "Proyecto Arquitectónico",
-      image: "/images/proj_6.png",
-      gridClass: "col-span-12 md:col-span-5 min-h-[350px] md:min-h-[460px]"
-    }
+  // Combinar propiedades reales
+  const allProperties = [
+    { ...lands[0], category: lands[0].type, gridClass: "col-span-12 md:col-span-8 min-h-[400px] md:min-h-[480px]" },
+    { ...lands[1], category: lands[1].type, gridClass: "col-span-12 md:col-span-4 min-h-[400px] md:min-h-[480px]" },
+    { ...lands[2], category: lands[2].type, gridClass: "col-span-12 md:col-span-4 min-h-[350px] md:min-h-[420px]" },
+    { ...houses[0], category: houses[0].type, gridClass: "col-span-12 md:col-span-4 min-h-[350px] md:min-h-[420px]" },
+    { ...houses[1], category: houses[1].type, gridClass: "col-span-12 md:col-span-4 min-h-[350px] md:min-h-[420px]" },
   ];
 
   return (
@@ -65,7 +30,7 @@ export const RealEstateSection: React.FC = () => {
               className="block uppercase text-brand mb-4"
               style={{ fontWeight: 500, fontSize: '13px', letterSpacing: '0.12em' }}
             >
-              PORTAFOLIO ANGAR
+              EN VENTA
             </span>
             <h2 
               className="text-main mb-6"
@@ -78,29 +43,31 @@ export const RealEstateSection: React.FC = () => {
               className="text-muted max-w-[600px] mx-auto"
               style={{ fontWeight: 400, fontSize: '19px', lineHeight: 1.5 }}
             >
-              Construcción, remodelación y propiedad vistas desde una misma visión.
+              Terrenos y casas con disponibilidad inmediata, diseñadas y gestionadas para asegurar tu inversión.
             </p>
           </motion.div>
         </div>
 
         {/* Galería Geométrica CSS Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8">
-          {projects.map((project, index) => (
+          {allProperties.map((property, index) => (
             <motion.a
-              href="#contacto"
-              key={project.id}
+              href={`https://wa.me/5211234567890?text=Hola,%20me%20interesa%20la%20propiedad%20${property.title}`} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.9, ease: customEase, delay: index * 0.1 }}
-              className={`group relative rounded-[16px] overflow-hidden flex flex-col justify-end ${project.gridClass}`}
+              className={`group relative rounded-[16px] overflow-hidden flex flex-col justify-end ${property.gridClass}`}
               style={{ backgroundColor: '#EFE5D8' }} // Fondo sutil mientras carga la imagen
             >
               {/* Imagen Protagonista */}
               <div className="absolute inset-0 w-full h-full overflow-hidden">
                 <img 
-                  src={project.image} 
-                  alt={project.title}
+                  src={property.image} 
+                  alt={property.title}
                   className="w-full h-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.03]"
                 />
               </div>
@@ -120,14 +87,14 @@ export const RealEstateSection: React.FC = () => {
                     className="text-[#EFE5D8] uppercase tracking-wider mb-2"
                     style={{ fontWeight: 500, fontSize: '14px' }}
                   >
-                    {project.category}
+                    {property.category}
                   </span>
                   <div className="flex justify-between items-end">
                     <h3 
                       className="text-[#FAF7F2]"
                       style={{ fontWeight: 500, fontSize: 'clamp(24px, 2.5vw, 30px)', lineHeight: 1.1 }}
                     >
-                      {project.title}
+                      {property.title}
                     </h3>
                     
                     {/* CTA discreto que aparece en hover */}
@@ -135,7 +102,7 @@ export const RealEstateSection: React.FC = () => {
                       className="opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 text-brand uppercase"
                       style={{ fontWeight: 500, fontSize: '13px', letterSpacing: '0.05em' }}
                     >
-                      Ver Proyecto
+                      Solicitar info
                     </span>
                   </div>
                 </div>

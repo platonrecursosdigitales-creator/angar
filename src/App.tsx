@@ -7,8 +7,6 @@ import { ConstructionSection } from './components/ConstructionSection';
 import { StickyServices } from './components/StickyServices';
 import { RealEstateSection } from './components/RealEstateSection';
 import { LuxuryMarqueeSection } from './components/LuxuryMarqueeSection';
-import { LandSection } from './components/LandSection';
-import { HousesSection } from './components/HousesSection';
 import { CreditsSection } from './components/CreditsSection';
 import { ProcessSection } from './components/ProcessSection';
 import { AboutSection } from './components/AboutSection';
@@ -51,8 +49,6 @@ function App() {
         <StickyServices />
         <LuxuryMarqueeSection />
         <RealEstateSection />
-        <LandSection />
-        <HousesSection />
         <CreditsSection />
         <ProcessSection />
         <AboutSection />
