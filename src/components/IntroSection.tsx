@@ -10,7 +10,7 @@ export const IntroSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20">
           
           {/* Columna Izquierda */}
-          <div className="lg:col-span-5 flex flex-col justify-start">
+          <div className="lg:col-span-6 flex flex-col justify-start lg:pr-8">
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -21,7 +21,7 @@ export const IntroSection: React.FC = () => {
               <div className="w-8 h-[2px] bg-brand"></div>
               <span 
                 className="block uppercase text-brand"
-                style={{ fontWeight: 700, fontSize: '13px', letterSpacing: '0.15em' }}
+                style={{ fontWeight: 700, fontSize: '14px', letterSpacing: '0.15em' }}
               >
                 VISIÓN INTEGRAL
               </span>
@@ -32,8 +32,8 @@ export const IntroSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: customEase, delay: 0.1 }}
-              className="text-[40px] md:text-[52px] lg:text-[68px] font-bold text-main mb-10 text-balance"
-              style={{ lineHeight: 1.05, letterSpacing: '-0.04em' }}
+              className="text-[40px] md:text-[52px] lg:text-[72px] font-bold text-main mb-12 text-balance"
+              style={{ lineHeight: 1.1, letterSpacing: '-0.02em' }}
             >
               Una forma más clara de construir, transformar y gestionar propiedad
             </motion.h2>
@@ -43,8 +43,8 @@ export const IntroSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: customEase, delay: 0.2 }}
-              className="text-[20px] lg:text-[24px] text-main/90 mb-14 max-w-[540px] text-balance"
-              style={{ fontWeight: 500, lineHeight: 1.6 }}
+              className="text-[20px] lg:text-[24px] text-main/90 mb-14 max-w-[620px] text-pretty"
+              style={{ fontWeight: 500, lineHeight: 1.65 }}
             >
               En ANGAR acompañamos proyectos de vivienda y propiedad con una visión completa: planeación, ejecución, gestión documental y seguimiento para avanzar con mayor claridad.
             </motion.p>
@@ -69,7 +69,7 @@ export const IntroSection: React.FC = () => {
           </div>
 
           {/* Columna Derecha */}
-          <div className="lg:col-span-7 flex flex-col gap-12 lg:gap-16 lg:pl-10">
+          <div className="lg:col-span-6 flex flex-col gap-12 lg:gap-16 lg:pl-4">
             
             {/* Revelado de Imagen */}
             <motion.div
