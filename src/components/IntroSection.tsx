@@ -4,12 +4,33 @@ import { motion } from 'framer-motion';
 export const IntroSection: React.FC = () => {
   const customEase: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
+  const services = [
+    { 
+      title: "Construir", 
+      text: "Viviendas nuevas y obra civil residencial con planeación, estructura y seguimiento profesional.",
+      image: "/images/residencia_intro.png", // Usamos la imagen principal que es muy vistosa
+      alt: "Arquitectura residencial moderna y construcción"
+    },
+    { 
+      title: "Transformar", 
+      text: "Remodelaciones y ampliaciones pensadas para mejorar el uso, la imagen y el valor de cada espacio.",
+      image: "/images/hover-transformar.png",
+      alt: "Remodelación residencial con acabados y mejora de espacios"
+    },
+    { 
+      title: "Gestionar", 
+      text: "Acompañamiento inmobiliario y documental para permisos, trámites, compra, venta e inversión.",
+      image: "/images/hover-gestionar.png",
+      alt: "Gestión inmobiliaria con documentos, planos y llaves sobre mesa de trabajo"
+    }
+  ];
+
   return (
-    <section id="nosotros" className="py-[120px] lg:py-[180px] bg-main overflow-hidden">
+    <section id="nosotros" className="py-[120px] lg:py-[180px] bg-main">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-[80px]">
         
         {/* Encabezado Superior (A lo largo - Split Layout) */}
-        <div className="mb-20 lg:mb-32">
+        <div className="mb-24 lg:mb-40">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -34,7 +55,7 @@ export const IntroSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, ease: customEase, delay: 0.1 }}
-                className="text-[42px] md:text-[64px] lg:text-[76px] xl:text-[88px] font-bold text-main"
+                className="text-[42px] md:text-[64px] lg:text-[76px] xl:text-[88px] font-bold text-main text-balance"
                 style={{ lineHeight: 1.05, letterSpacing: '-0.03em' }}
               >
                 Una forma más clara de construir, transformar y gestionar propiedad
@@ -75,119 +96,65 @@ export const IntroSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Contenido Inferior: Imagen + Lista de Servicios */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
-          
-          {/* Imagen de Apoyo (Izquierda) */}
-          <div className="lg:col-span-5">
-            <motion.div
-              initial={{ clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)" }}
-              whileInView={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)" }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1.2, ease: customEase }}
-              className="w-full aspect-[4/3] lg:aspect-[4/5] overflow-hidden rounded-[24px] sticky top-32"
-            >
-              <img 
-                src="/images/residencia_intro.png" 
-                alt="Arquitectura residencial moderna" 
-                className="w-full h-full object-cover scale-[1.03] hover:scale-100 transition-transform duration-[1.5s]"
-              />
-            </motion.div>
-          </div>
-
-          {/* Lista Editorial de Servicios (Derecha) */}
-          <div className="lg:col-span-7 flex flex-col w-full">
-            {[
-              { 
-                title: "Construir", 
-                text: "Viviendas nuevas y obra civil residencial con planeación, estructura y seguimiento profesional.",
-                image: "/images/hover-construir.png",
-                alt: "Construcción habitacional en proceso con estructura y trabajo técnico ordenado"
-              },
-              { 
-                title: "Transformar", 
-                text: "Remodelaciones y ampliaciones pensadas para mejorar el uso, la imagen y el valor de cada espacio.",
-                image: "/images/hover-transformar.png",
-                alt: "Remodelación residencial con acabados y mejora de espacios"
-              },
-              { 
-                title: "Gestionar", 
-                text: "Acompañamiento inmobiliario y documental para permisos, trámites, compra, venta e inversión.",
-                image: "/images/hover-gestionar.png",
-                alt: "Gestión inmobiliaria con documentos, planos y llaves sobre mesa de trabajo"
-              }
-            ].map((item, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.8, ease: customEase, delay: 0.2 + (index * 0.1) }}
-                className="group relative flex flex-col py-12 lg:py-16 transition-colors duration-500 outline-none first:pt-0"
-                tabIndex={0}
+        {/* Contenido Inferior: Layout Alternado de Servicios */}
+        <div className="flex flex-col gap-24 lg:gap-40">
+          {services.map((item, index) => {
+            const isEven = index % 2 === 0;
+            return (
+              <div 
+                key={index} 
+                className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-24 ${isEven ? '' : 'lg:flex-row-reverse'}`}
               >
-                {/* Línea Divisoria Superior */}
-                {index !== 0 && (
-                  <motion.div 
-                    initial={{ width: "0%" }}
-                    whileInView={{ width: "100%" }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 1, ease: customEase, delay: 0.1 + (index * 0.1) }}
-                    className="absolute top-0 left-0 h-[1px] bg-border/80"
-                  />
-                )}
-                
-                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 lg:gap-12">
-                  <div className="lg:w-2/5">
-                    {/* Acento Naranja Dinámico */}
-                    <div className="w-8 h-[3px] bg-brand mb-6 transition-all duration-500 group-hover:w-16"></div>
+                {/* Lado de la Imagen */}
+                <div className="w-full lg:w-1/2">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.96, filter: 'blur(10px)' }}
+                    whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 1.2, ease: customEase }}
+                    className="aspect-[4/3] lg:aspect-[16/11] overflow-hidden rounded-[24px] shadow-sm"
+                  >
+                    <img 
+                      src={item.image} 
+                      alt={item.alt} 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s] ease-out"
+                    />
+                  </motion.div>
+                </div>
+
+                {/* Lado del Texto */}
+                <div className="w-full lg:w-1/2 flex flex-col justify-center">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, ease: customEase, delay: 0.2 }}
+                    className={`max-w-[540px] ${!isEven ? 'lg:ml-auto' : ''}`}
+                  >
+                    <div className="flex items-center gap-4 mb-6">
+                      <span className="text-brand font-bold text-lg tracking-widest">0{index + 1}</span>
+                      <div className="h-[2px] w-12 bg-brand/30"></div>
+                    </div>
+                    
                     <h3 
-                      className="text-main font-bold"
-                      style={{ fontSize: '36px', lineHeight: 1.1 }}
+                      className="text-[40px] lg:text-[56px] font-bold text-main mb-6 leading-tight"
                     >
                       {item.title}
                     </h3>
-                  </div>
-                  
-                  <div className="lg:w-3/5 flex flex-col">
+                    
                     <p 
-                      className="text-main/80"
-                      style={{ fontWeight: 500, fontSize: '20px', lineHeight: 1.6 }}
+                      className="text-[18px] lg:text-[22px] text-main/80 leading-relaxed"
+                      style={{ fontWeight: 500 }}
                     >
                       {item.text}
                     </p>
-
-                    {/* Imagen Expandible (Despliegue sutil) */}
-                    <div 
-                      className="hidden lg:grid transition-all duration-[450ms] ease-[cubic-bezier(0.22,1,0.36,1)] grid-rows-[0fr] group-hover:grid-rows-[1fr] opacity-0 group-hover:opacity-100 scale-[0.97] group-hover:scale-100 origin-top"
-                    >
-                      <div className="overflow-hidden">
-                        <div className="pt-8">
-                          <img 
-                            src={item.image}
-                            alt={item.alt}
-                            className="w-full h-[320px] object-cover rounded-[20px] shadow-sm"
-                            loading="lazy"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  </motion.div>
                 </div>
-              </motion.div>
-            ))}
-            
-            {/* Línea Divisoria Final */}
-            <motion.div 
-              initial={{ width: "0%" }}
-              whileInView={{ width: "100%" }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 1, ease: customEase, delay: 0.6 }}
-              className="h-[1px] bg-border/80 w-full"
-            />
-          </div>
-
+              </div>
+            );
+          })}
         </div>
+
       </div>
     </section>
   );
