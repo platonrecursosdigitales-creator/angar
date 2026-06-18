@@ -5,18 +5,37 @@ export const CreditsSection: React.FC = () => {
   const customEase: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
   const credits = [
-    "Crédito Infonavit",
-    "Crédito Fovissste",
-    "Créditos Bancarios",
-    "Esquema para Pensionados",
-    "Recursos Propios"
+    {
+      name: "Crédito Infonavit",
+      logos: ["https://upload.wikimedia.org/wikipedia/commons/c/c4/Logo_INFONAVIT.svg"]
+    },
+    {
+      name: "Crédito Fovissste",
+      logos: ["https://logo.clearbit.com/fovissste.gob.mx"]
+    },
+    {
+      name: "Créditos Bancarios",
+      logos: [
+        "https://upload.wikimedia.org/wikipedia/commons/0/05/BBVA_2019.svg",
+        "https://upload.wikimedia.org/wikipedia/commons/a/ad/Banorte_logo.svg",
+        "https://upload.wikimedia.org/wikipedia/commons/b/b8/Banco_Santander_Logotipo.svg"
+      ]
+    },
+    {
+      name: "Esquema para Pensionados",
+      logos: []
+    },
+    {
+      name: "Recursos Propios",
+      logos: []
+    }
   ];
 
   return (
-    <section className="py-[120px] lg:py-[180px] bg-main border-y border-border overflow-hidden">
+    <section className="py-[100px] lg:py-[140px] bg-main border-y border-border overflow-hidden">
       <div className="max-w-[1360px] mx-auto px-6 lg:px-[64px]">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
           
           {/* Columna Izquierda: Títulos y Descripción */}
           <div className="lg:col-span-5 flex flex-col justify-between">
@@ -57,7 +76,7 @@ export const CreditsSection: React.FC = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="hidden lg:flex items-start gap-4 mt-24 p-6 rounded-[16px] bg-soft/60 border border-border/50"
+              className="hidden lg:flex items-start gap-4 mt-16 p-6 rounded-[16px] bg-soft/60 border border-border/50"
             >
               <div className="w-2 h-2 rounded-full bg-brand mt-2 shrink-0"></div>
               <p className="text-main/80 text-[14px] leading-relaxed font-medium">
@@ -87,18 +106,38 @@ export const CreditsSection: React.FC = () => {
                   transition={{ duration: 0.6, ease: customEase, delay: 0.1 + (index * 0.1) }}
                   className="group relative"
                 >
-                  <div className="flex items-center justify-between py-8 lg:py-10 px-2 transition-colors duration-500 hover:bg-soft/30 cursor-default">
-                    <div className="flex items-center gap-6 lg:gap-12">
+                  <div className="flex flex-col lg:flex-row lg:items-center justify-between py-6 lg:py-8 px-2 transition-colors duration-500 hover:bg-soft/30 cursor-default">
+                    
+                    <div className="flex items-center gap-6 lg:gap-10">
                       <span className="text-brand font-bold text-sm tracking-widest opacity-60">0{index + 1}</span>
                       <span 
-                        className="text-[24px] lg:text-[32px] font-medium text-main group-hover:text-brand transition-colors duration-300"
+                        className="text-[22px] lg:text-[28px] font-medium text-main group-hover:text-brand transition-colors duration-300"
                         style={{ letterSpacing: '-0.01em' }}
                       >
-                        {credit}
+                        {credit.name}
                       </span>
                     </div>
-                    {/* Acento visual en hover */}
-                    <div className="w-8 h-[1px] bg-border group-hover:bg-brand group-hover:w-16 transition-all duration-500 ease-out"></div>
+
+                    <div className="flex items-center justify-between mt-4 lg:mt-0 pl-[60px] lg:pl-0">
+                      {/* Logos de instituciones */}
+                      {credit.logos.length > 0 && (
+                        <div className="flex items-center gap-6 opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 mr-6">
+                          {credit.logos.map((logo, i) => (
+                            <img 
+                              key={i} 
+                              src={logo} 
+                              alt="Logo Oficial" 
+                              className="h-6 lg:h-7 object-contain mix-blend-multiply" 
+                              onError={(e) => e.currentTarget.style.display = 'none'}
+                            />
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Acento visual en hover (solo visible en desktop si hay espacio) */}
+                      <div className="hidden lg:block w-8 h-[1px] bg-border group-hover:bg-brand group-hover:w-12 transition-all duration-500 ease-out"></div>
+                    </div>
+
                   </div>
                   
                   {/* Línea separadora inferior */}
@@ -119,7 +158,7 @@ export const CreditsSection: React.FC = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="lg:hidden flex items-start gap-4 mt-12 p-6 rounded-[16px] bg-soft border border-border"
+              className="lg:hidden flex items-start gap-4 mt-10 p-6 rounded-[16px] bg-soft border border-border"
             >
               <div className="w-2 h-2 rounded-full bg-brand mt-2 shrink-0"></div>
               <p className="text-main/80 text-[14px] leading-relaxed font-medium">
