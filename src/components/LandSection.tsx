@@ -5,7 +5,7 @@ import { SectionLabel } from './SectionLabel';
 import { MapPin, Maximize, CreditCard, ArrowRight } from 'lucide-react';
 
 export const LandSection: React.FC = () => {
-  const customEase = [0.22, 1, 0.36, 1];
+  const customEase: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
   const containerVariants = {
     hidden: { opacity: 0 },
