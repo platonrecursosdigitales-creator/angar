@@ -106,9 +106,9 @@ export const CreditsSection: React.FC = () => {
                   transition={{ duration: 0.6, ease: customEase, delay: 0.1 + (index * 0.1) }}
                   className="group relative"
                 >
-                  <div className="flex flex-col lg:flex-row lg:items-center justify-between py-6 lg:py-8 px-2 transition-colors duration-500 hover:bg-soft/30 cursor-default">
+                  <div className="flex flex-col xl:flex-row xl:items-center justify-between py-6 lg:py-8 px-2 transition-colors duration-500 hover:bg-soft/30 cursor-default">
                     
-                    <div className="flex items-center gap-6 lg:gap-10">
+                    <div className="flex items-center gap-6 lg:gap-10 whitespace-nowrap">
                       <span className="text-brand font-bold text-sm tracking-widest opacity-60">0{index + 1}</span>
                       <span 
                         className="text-[22px] lg:text-[28px] font-medium text-main group-hover:text-brand transition-colors duration-300"
@@ -118,16 +118,16 @@ export const CreditsSection: React.FC = () => {
                       </span>
                     </div>
 
-                    <div className="flex items-center justify-between mt-4 lg:mt-0 pl-[60px] lg:pl-0">
+                    <div className="flex items-center justify-between mt-6 xl:mt-0 pl-[60px] xl:pl-0 w-full xl:w-auto">
                       {/* Logos de instituciones */}
                       {credit.logos.length > 0 && (
-                        <div className="flex items-center gap-6 opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 mr-6">
+                        <div className="flex flex-wrap items-center gap-6 lg:gap-8 mr-6">
                           {credit.logos.map((logo, i) => (
                             <img 
                               key={i} 
                               src={logo} 
                               alt="Logo Oficial" 
-                              className="h-6 lg:h-7 object-contain mix-blend-multiply" 
+                              className="h-10 lg:h-12 object-contain mix-blend-multiply" 
                               onError={(e) => e.currentTarget.style.display = 'none'}
                             />
                           ))}
@@ -135,7 +135,7 @@ export const CreditsSection: React.FC = () => {
                       )}
 
                       {/* Acento visual en hover (solo visible en desktop si hay espacio) */}
-                      <div className="hidden lg:block w-8 h-[1px] bg-border group-hover:bg-brand group-hover:w-12 transition-all duration-500 ease-out"></div>
+                      <div className="hidden xl:block w-8 h-[1px] bg-border group-hover:bg-brand group-hover:w-12 transition-all duration-500 ease-out shrink-0"></div>
                     </div>
 
                   </div>
