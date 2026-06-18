@@ -4,13 +4,30 @@ import { MobileMenu } from './MobileMenu';
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      
+      // Manejar el estado visual del header (fondo, padding)
+      setIsScrolled(currentScrollY > 50);
+
+      // Ocultar si hacemos scroll hacia abajo (después de 100px para evitar ocultarlo inmediatamente)
+      // Mostrar si hacemos scroll hacia arriba
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsHidden(true);
+      } else if (currentScrollY < lastScrollY) {
+        setIsHidden(false);
+      }
+
+      lastScrollY = currentScrollY;
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -24,8 +41,10 @@ export const Header: React.FC = () => {
   return (
     <>
       <header 
-        className={`fixed left-0 w-full z-50 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] px-6 lg:px-12 ${
+        className={`fixed left-0 w-full z-50 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] px-6 lg:px-12 ${
           isScrolled ? 'top-4 lg:top-6' : 'top-6 lg:top-10'
+        } ${
+          isHidden ? '-translate-y-[200%] opacity-0 pointer-events-none' : 'translate-y-0 opacity-100'
         }`}
       >
         <div 
