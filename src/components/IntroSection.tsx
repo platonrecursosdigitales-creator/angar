@@ -5,9 +5,9 @@ export const IntroSection: React.FC = () => {
   const customEase: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
   return (
-    <section id="nosotros" className="py-[120px] lg:py-[160px] bg-main overflow-hidden">
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-[80px]">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+    <section id="nosotros" className="py-[120px] lg:py-[180px] bg-main overflow-hidden">
+      <div className="max-w-[1320px] mx-auto px-6 lg:px-[80px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20">
           
           {/* Columna Izquierda */}
           <div className="lg:col-span-5 flex flex-col justify-start">
@@ -16,10 +16,12 @@ export const IntroSection: React.FC = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: customEase }}
+              className="flex items-center gap-4 mb-8"
             >
+              <div className="w-8 h-[2px] bg-brand"></div>
               <span 
-                className="block uppercase text-brand mb-6"
-                style={{ fontWeight: 700, fontSize: '13px', letterSpacing: '0.12em' }}
+                className="block uppercase text-brand"
+                style={{ fontWeight: 700, fontSize: '13px', letterSpacing: '0.15em' }}
               >
                 VISIÓN INTEGRAL
               </span>
@@ -30,8 +32,8 @@ export const IntroSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: customEase, delay: 0.1 }}
-              className="text-[34px] md:text-[42px] lg:text-[62px] font-bold text-main mb-8"
-              style={{ lineHeight: 1.02, letterSpacing: '-0.045em' }}
+              className="text-[40px] md:text-[52px] lg:text-[68px] font-bold text-main mb-10 text-balance"
+              style={{ lineHeight: 1.05, letterSpacing: '-0.04em' }}
             >
               Una forma más clara de construir, transformar y gestionar propiedad
             </motion.h2>
@@ -41,8 +43,8 @@ export const IntroSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: customEase, delay: 0.2 }}
-              className="text-[18px] lg:text-[22px] text-muted mb-12 max-w-[600px]"
-              style={{ fontWeight: 500, lineHeight: 1.65 }}
+              className="text-[20px] lg:text-[24px] text-main/90 mb-14 max-w-[540px] text-balance"
+              style={{ fontWeight: 500, lineHeight: 1.6 }}
             >
               En ANGAR acompañamos proyectos de vivienda y propiedad con una visión completa: planeación, ejecución, gestión documental y seguimiento para avanzar con mayor claridad.
             </motion.p>
@@ -55,11 +57,11 @@ export const IntroSection: React.FC = () => {
             >
               <a 
                 href="#contacto"
-                className="inline-flex items-center text-brand uppercase hover:text-brand-dark transition-colors"
-                style={{ fontWeight: 700, fontSize: '14px', letterSpacing: '0.03em' }}
+                className="group inline-flex items-center text-brand uppercase hover:text-brand-dark transition-colors"
+                style={{ fontWeight: 700, fontSize: '14px', letterSpacing: '0.05em' }}
               >
                 Solicitar asesoría
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 ml-3 transform transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M5 12h14M12 5l7 7-7 7"></path>
                 </svg>
               </a>
@@ -67,7 +69,7 @@ export const IntroSection: React.FC = () => {
           </div>
 
           {/* Columna Derecha */}
-          <div className="lg:col-span-7 flex flex-col gap-16">
+          <div className="lg:col-span-7 flex flex-col gap-12 lg:gap-16 lg:pl-10">
             
             {/* Revelado de Imagen */}
             <motion.div
@@ -75,12 +77,12 @@ export const IntroSection: React.FC = () => {
               whileInView={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)" }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1.2, ease: customEase }}
-              className="w-full aspect-[4/3] lg:aspect-[16/11] overflow-hidden rounded-[16px]"
+              className="w-full aspect-[4/3] lg:aspect-[16/10] overflow-hidden rounded-[24px]"
             >
               <img 
                 src="/images/residencia_intro.png" 
                 alt="Arquitectura residencial moderna" 
-                className="w-full h-full object-cover scale-[1.03] hover:scale-100 transition-transform duration-1000"
+                className="w-full h-full object-cover scale-[1.03] hover:scale-100 transition-transform duration-[1.5s]"
               />
             </motion.div>
 
@@ -111,8 +113,8 @@ export const IntroSection: React.FC = () => {
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.8, ease: customEase, delay: 0.3 + (index * 0.15) }}
-                  className="group relative flex flex-col py-8 lg:py-10 transition-transform duration-500 hover:-translate-y-1 focus-within:-translate-y-1 outline-none"
+                  transition={{ duration: 0.8, ease: customEase, delay: 0.2 + (index * 0.1) }}
+                  className="group relative flex flex-col py-10 lg:py-12 transition-colors duration-500 outline-none"
                   tabIndex={0}
                 >
                   {/* Línea Divisoria Superior */}
@@ -121,38 +123,43 @@ export const IntroSection: React.FC = () => {
                     whileInView={{ width: "100%" }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 1, ease: customEase, delay: 0.1 + (index * 0.1) }}
-                    className="absolute top-0 left-0 h-[1px] bg-border"
+                    className="absolute top-0 left-0 h-[1px] bg-border/80"
                   />
                   
-                  {/* Acento Naranja */}
-                  <div className="w-8 h-[2px] bg-brand mb-5 transition-all duration-500 group-hover:w-14 group-focus:w-14"></div>
-                  
-                  <h3 
-                    className="text-main mb-3"
-                    style={{ fontWeight: 700, fontSize: '24px', lineHeight: 1.15 }}
-                  >
-                    {item.title}
-                  </h3>
-                  
-                  <p 
-                    className="text-muted"
-                    style={{ fontWeight: 500, fontSize: '16px', lineHeight: 1.65, maxWidth: '520px' }}
-                  >
-                    {item.text}
-                  </p>
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 lg:gap-12">
+                    <div className="lg:w-1/3">
+                      {/* Acento Naranja Dinámico */}
+                      <div className="w-8 h-[3px] bg-brand mb-6 transition-all duration-500 group-hover:w-16"></div>
+                      <h3 
+                        className="text-main font-bold"
+                        style={{ fontSize: '32px', lineHeight: 1.1 }}
+                      >
+                        {item.title}
+                      </h3>
+                    </div>
+                    
+                    <div className="lg:w-2/3 flex flex-col">
+                      <p 
+                        className="text-main/80"
+                        style={{ fontWeight: 500, fontSize: '18px', lineHeight: 1.6, maxWidth: '480px' }}
+                      >
+                        {item.text}
+                      </p>
 
-                  {/* Imagen Expandible (Solo Desktop) */}
-                  <div 
-                    className="hidden lg:grid transition-all duration-[300ms] group-hover:duration-[450ms] group-focus:duration-[450ms] ease-[cubic-bezier(0.22,1,0.36,1)] grid-rows-[0fr] group-hover:grid-rows-[1fr] group-focus:grid-rows-[1fr] opacity-0 group-hover:opacity-100 group-focus:opacity-100 scale-[0.96] group-hover:scale-100 group-focus:scale-100 origin-top"
-                  >
-                    <div className="overflow-hidden">
-                      <div className="pt-6">
-                        <img 
-                          src={item.image}
-                          alt={item.alt}
-                          className="w-full h-[220px] object-cover rounded-[24px] border border-border bg-[#EFE5D8]"
-                          loading="lazy"
-                        />
+                      {/* Imagen Expandible (Despliegue sutil) */}
+                      <div 
+                        className="hidden lg:grid transition-all duration-[450ms] ease-[cubic-bezier(0.22,1,0.36,1)] grid-rows-[0fr] group-hover:grid-rows-[1fr] opacity-0 group-hover:opacity-100 scale-[0.97] group-hover:scale-100 origin-top"
+                      >
+                        <div className="overflow-hidden">
+                          <div className="pt-8">
+                            <img 
+                              src={item.image}
+                              alt={item.alt}
+                              className="w-full h-[280px] object-cover rounded-[20px] shadow-sm"
+                              loading="lazy"
+                            />
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -164,8 +171,8 @@ export const IntroSection: React.FC = () => {
                 initial={{ width: "0%" }}
                 whileInView={{ width: "100%" }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 1, ease: customEase, delay: 0.7 }}
-                className="h-[1px] bg-border w-full"
+                transition={{ duration: 1, ease: customEase, delay: 0.6 }}
+                className="h-[1px] bg-border/80 w-full"
               />
             </div>
 
