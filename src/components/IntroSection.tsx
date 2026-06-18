@@ -33,7 +33,7 @@ export const IntroSection: React.FC = () => {
               className="text-[34px] md:text-[42px] lg:text-[62px] font-bold text-main mb-8"
               style={{ lineHeight: 1.02, letterSpacing: '-0.045em' }}
             >
-              Una forma más clara de construir, transformar o vender
+              Una forma más clara de construir, transformar y gestionar propiedad
             </motion.h2>
 
             <motion.p
@@ -44,7 +44,7 @@ export const IntroSection: React.FC = () => {
               className="text-[18px] lg:text-[22px] text-muted mb-12 max-w-[600px]"
               style={{ fontWeight: 500, lineHeight: 1.65 }}
             >
-              En ANGAR acompañamos proyectos de vivienda y propiedad con una visión completa: planeación, ejecución y gestión para avanzar con mayor claridad.
+              En ANGAR acompañamos proyectos de vivienda y propiedad con una visión completa: planeación, ejecución, gestión documental y seguimiento para avanzar con mayor claridad.
             </motion.p>
 
             <motion.div
@@ -89,7 +89,7 @@ export const IntroSection: React.FC = () => {
               {[
                 { 
                   title: "Construir", 
-                  text: "Viviendas nuevas y obra civil con planeación, estructura y seguimiento profesional.",
+                  text: "Viviendas nuevas y obra civil residencial con planeación, estructura y seguimiento profesional.",
                   image: "/images/hover-construir.png",
                   alt: "Construcción habitacional en proceso con estructura y trabajo técnico ordenado"
                 },
@@ -101,7 +101,7 @@ export const IntroSection: React.FC = () => {
                 },
                 { 
                   title: "Gestionar", 
-                  text: "Acompañamiento inmobiliario y documental para tomar decisiones con mayor claridad.",
+                  text: "Acompañamiento inmobiliario y documental para permisos, trámites, compra, venta e inversión.",
                   image: "/images/hover-gestionar.png",
                   alt: "Gestión inmobiliaria con documentos, planos y llaves sobre mesa de trabajo"
                 }
