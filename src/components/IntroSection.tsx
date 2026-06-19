@@ -8,8 +8,8 @@ export const IntroSection: React.FC = () => {
     { 
       title: "Construir", 
       text: "Viviendas nuevas y obra civil residencial con planeación, estructura y seguimiento profesional.",
-      image: "/images/residencia_intro.png", // Usamos la imagen principal que es muy vistosa
-      alt: "Arquitectura residencial moderna y construcción"
+      image: "/images/obra_real.jpeg",
+      alt: "Obra residencial construida por ANGAR"
     },
     { 
       title: "Transformar", 
