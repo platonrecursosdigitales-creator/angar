@@ -74,6 +74,6 @@ export const properties = [
       "Precio a consultar"
     ],
     image: "/images/terreno-ayacatitla.jpg",
-    mapIframe: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3694.223826485156!2d-100.9899902!3d22.1935986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842a9f7990209f57%3A0x8ad969e643cb840b!2sAyacatitla%20201-100%2C%20Imperio%20Azteca%2C%2078110%20San%20Luis%20Potos%C3%AD%2C%20S.L.P.!5e0!3m2!1ses-419!2smx!4v1781828529334!5m2!1ses-419!2smx"
+    mapIframe: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3694.223826485156!2d-100.9899902!3d22.1935986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842a9f7990209f57%3A0x8ad969e643cb840b!2sAyacatitla%20201-100%2C%20Imperio%20Azteca%2C%2078110%20San%20Luis%20Potos%C3%AD%2C%20S.L.P.!5e0!3m2!1ses-419!2smx!4v1781829411837!5m2!1ses-419!2smx"
   }
 ];
