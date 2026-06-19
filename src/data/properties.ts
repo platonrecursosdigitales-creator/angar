@@ -43,7 +43,7 @@ export const properties = [
       "Cochera para 2 autos"
     ],
     image: "/images/casa-morales.png",
-    mapIframe: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3695.0932397239703!2d-101.0236494247115!3d22.160522579787322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjLCsDA5JzM3LjkiTiAxMDHCsDAxJzE1LjkiVw!5e0!3m2!1ses!2smx!4v1781828491648!5m2!1ses!2smx"
+    mapIframe: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3695.0932397239703!2d-101.0236494247115!3d22.160522579787322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjLCsDA5JzM3LjkiTiAxMDHCsDAxJzE1LjkiVw!5e0!3m2!1ses!2smx!4v1781829234975!5m2!1ses!2smx"
   },
   {
     id: 2,

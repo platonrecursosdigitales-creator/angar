@@ -157,7 +157,17 @@ export const RealEstateSection: React.FC = () => {
                     className="overflow-hidden"
                   >
                     <div className="pt-10">
-                      <div className="w-full aspect-[16/9] lg:aspect-[21/9] border border-border" dangerouslySetInnerHTML={{ __html: property.mapIframe.replace('width="600"', 'width="100%"').replace('height="450"', 'height="100%"') }} />
+                      <div className="w-full aspect-[16/9] lg:aspect-[21/9] border border-border">
+                        <iframe 
+                          src={property.mapIframe} 
+                          width="100%" 
+                          height="100%" 
+                          style={{ border: 0 }} 
+                          allowFullScreen={false} 
+                          loading="lazy" 
+                          referrerPolicy="no-referrer-when-downgrade"
+                        />
+                      </div>
                     </div>
                   </motion.div>
                 )}
