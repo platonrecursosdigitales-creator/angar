@@ -11,47 +11,45 @@ export const RealEstateSection: React.FC = () => {
   };
 
   return (
-    <section id="inmobiliaria" className="py-[120px] lg:py-[150px] bg-main overflow-hidden">
+    <section id="inmobiliaria" className="py-[120px] lg:py-[180px] bg-main overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-[64px]">
         
-        {/* Encabezado Editorial */}
-        <div className="flex flex-col items-start lg:items-center text-left lg:text-center mb-16 lg:mb-24">
+        {/* Encabezado Editorial Minimalista */}
+        <div className="mb-20 lg:mb-32 max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: customEase }}
-            className="w-full"
           >
-            <div className="flex items-center lg:justify-center gap-4 mb-8">
-              <div className="w-12 h-[2px] bg-brand"></div>
+            <div className="flex items-center gap-6 mb-8">
               <span 
                 className="block uppercase text-brand font-bold"
-                style={{ fontSize: '13px', letterSpacing: '0.15em' }}
+                style={{ fontSize: '13px', letterSpacing: '0.2em' }}
               >
                 PROPIEDADES DISPONIBLES
               </span>
-              <div className="hidden lg:block w-12 h-[2px] bg-brand"></div>
+              <div className="w-16 h-[1px] bg-brand"></div>
             </div>
             
             <h2 
-              className="text-main mb-8 text-balance max-w-4xl mx-auto"
-              style={{ fontWeight: 700, fontSize: 'clamp(36px, 4vw, 56px)', letterSpacing: '-0.03em', lineHeight: 1.1 }}
+              className="text-main mb-8 text-balance"
+              style={{ fontWeight: 400, fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '-0.02em', lineHeight: 1.05 }}
             >
               Opciones actuales para compra, inversión o patrimonio en San Luis Potosí.
             </h2>
             
             <p 
-              className="text-main/80 max-w-3xl mx-auto"
-              style={{ fontWeight: 500, fontSize: '19px', lineHeight: 1.6 }}
+              className="text-main/70 max-w-2xl"
+              style={{ fontWeight: 400, fontSize: '20px', lineHeight: 1.6 }}
             >
-              ANGAR reúne oportunidades inmobiliarias disponibles para quienes buscan comprar, invertir o desarrollar patrimonio. Cada propiedad se presenta con información clara, ubicación y acompañamiento durante el proceso de compra, documentación y cierre.
+              Reunimos oportunidades inmobiliarias seleccionadas. Cada propiedad se presenta con información técnica clara, ubicación precisa y nuestro acompañamiento durante todo el proceso de cierre.
             </p>
           </motion.div>
         </div>
 
-        {/* Lista de Propiedades Reales */}
-        <div className="flex flex-col gap-16 lg:gap-24">
+        {/* Lista de Propiedades - Estilo Editorial / Brutalista suave */}
+        <div className="flex flex-col gap-24 lg:gap-40">
           {properties.map((property, index) => (
             <motion.div
               key={property.id}
@@ -59,92 +57,107 @@ export const RealEstateSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: customEase, delay: index * 0.1 }}
-              className="bg-white rounded-[24px] lg:rounded-[32px] overflow-hidden shadow-sm border border-border flex flex-col"
+              className="flex flex-col"
             >
-              <div className="flex flex-col lg:flex-row">
+              {/* Layout Dividido */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-stretch">
                 
-                {/* Lado Izquierdo: Imagen */}
-                <div className="w-full lg:w-[45%] xl:w-[40%] relative min-h-[350px] lg:min-h-full">
-                  <img 
-                    src={property.image} 
-                    alt={property.title}
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                  <div className="absolute top-6 left-6 flex flex-wrap gap-2">
-                    <span className="bg-white/90 backdrop-blur-sm text-main text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
-                      {property.type}
-                    </span>
-                  </div>
+                {/* Lado Izquierdo: Visual (Imagen o Tipografía) */}
+                <div className="lg:col-span-5 relative w-full aspect-[4/5] lg:aspect-auto">
+                  {property.id === 1 ? (
+                    // Bloque CSS Tipográfico para Casa Morales (Elimina el look de IA)
+                    <div className="w-full h-full min-h-[400px] lg:min-h-full bg-[#E5DCD0] flex flex-col items-center justify-center p-8 border border-border">
+                      <span className="block text-brand tracking-[0.4em] text-xs font-bold mb-6 uppercase">
+                        Ubicación Exclusiva
+                      </span>
+                      <h3 className="text-5xl md:text-6xl text-main tracking-widest uppercase" style={{ fontWeight: 300, fontFamily: 'serif' }}>
+                        Morales
+                      </h3>
+                      <div className="w-px h-12 bg-brand/30 mt-8"></div>
+                    </div>
+                  ) : (
+                    // Imagen real (Terreno) con recorte geométrico
+                    <img 
+                      src={property.image} 
+                      alt={property.title}
+                      className="w-full h-full object-cover border border-border"
+                      style={{ filter: 'contrast(1.05) saturate(0.95)' }}
+                    />
+                  )}
                 </div>
 
-                {/* Lado Derecho: Contenido */}
-                <div className="w-full lg:w-[55%] xl:w-[60%] p-8 lg:p-12 flex flex-col justify-between">
-                  <div>
-                    {/* Badges / Highlights */}
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {property.highlights.map((highlight, i) => (
-                        <span key={i} className="bg-soft text-main/80 text-[13px] font-medium px-3 py-1 rounded-full border border-border/50">
-                          {highlight}
-                        </span>
-                      ))}
-                    </div>
+                {/* Lado Derecho: Contenido Elegante */}
+                <div className="lg:col-span-7 flex flex-col justify-center py-6 lg:py-12">
+                  
+                  {/* Tipo de Propiedad */}
+                  <span className="block text-brand uppercase tracking-[0.15em] text-sm font-bold mb-6">
+                    {property.type}
+                  </span>
 
-                    <h3 className="text-[32px] lg:text-[40px] font-bold text-main leading-[1.1] mb-4 tracking-[-0.02em]">
-                      {property.title}
-                    </h3>
-                    
-                    <p className="text-[17px] text-main/70 font-medium mb-6">
-                      <span className="inline-block w-4 h-4 mr-2 text-brand">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                      </span>
-                      {property.location}
-                    </p>
+                  {/* Título */}
+                  <h3 className="text-[36px] lg:text-[48px] font-bold text-main leading-[1.05] mb-8 tracking-[-0.02em]">
+                    {property.title}
+                  </h3>
+                  
+                  {/* Highlights (Separados por puntos, sin badges de cápsula) */}
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-8 text-main/80 text-[13px] tracking-widest uppercase font-medium">
+                    {property.highlights.map((highlight, i) => (
+                      <React.Fragment key={i}>
+                        <span>{highlight}</span>
+                        {i < property.highlights.length - 1 && <span className="text-brand/50">•</span>}
+                      </React.Fragment>
+                    ))}
+                  </div>
 
-                    <p className="text-[18px] text-main/90 font-medium leading-[1.65] mb-8">
-                      {property.description}
-                    </p>
+                  {/* Descripción */}
+                  <p className="text-[18px] lg:text-[20px] text-main/80 font-normal leading-[1.6] mb-12 max-w-2xl text-balance">
+                    {property.description}
+                  </p>
 
+                  {/* Bloque Inferior: Precio y Botones */}
+                  <div className="mt-auto border-t border-border pt-8 flex flex-col xl:flex-row xl:items-center justify-between gap-8">
                     {/* Precio */}
-                    <div className="mb-10">
-                      <span className="block text-sm uppercase text-brand font-bold tracking-wider mb-1">Inversión</span>
-                      <span className="text-[32px] lg:text-[36px] font-bold text-main">
+                    <div>
+                      <span className="block text-xs uppercase text-brand font-bold tracking-[0.2em] mb-2">Inversión</span>
+                      <span className="text-[32px] lg:text-[40px] font-light text-main tracking-tight">
                         {property.price}
                       </span>
                     </div>
+
+                    {/* Acciones Geométricas */}
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <button 
+                        onClick={() => toggleMap(property.id)}
+                        className="inline-flex items-center justify-center bg-transparent border border-main text-main font-bold text-[13px] tracking-[0.15em] uppercase px-8 py-4 hover:bg-main hover:text-white transition-colors duration-300"
+                      >
+                        {activeMapId === property.id ? 'Ocultar mapa' : 'Ver mapa'}
+                      </button>
+                      <a 
+                        href={`https://wa.me/5211234567890?text=Hola,%20quisiera%20solicitar%20información%20sobre%20el%20proyecto:%20${property.title}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center bg-brand border border-brand text-white font-bold text-[13px] tracking-[0.15em] uppercase px-8 py-4 hover:bg-brand-dark hover:border-brand-dark transition-colors duration-300"
+                      >
+                        Contactar
+                      </a>
+                    </div>
                   </div>
 
-                  {/* Acciones (Botones) */}
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <a 
-                      href={`https://wa.me/5211234567890?text=Hola,%20quisiera%20solicitar%20información%20sobre%20el%20proyecto:%20${property.title}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center bg-brand text-white font-bold text-[15px] tracking-wide px-8 py-4 rounded-[12px] hover:bg-brand-dark transition-colors"
-                    >
-                      Solicitar información
-                    </a>
-                    <button 
-                      onClick={() => toggleMap(property.id)}
-                      className="inline-flex items-center justify-center bg-transparent border-2 border-brand text-brand font-bold text-[15px] tracking-wide px-8 py-4 rounded-[12px] hover:bg-brand/5 transition-colors"
-                    >
-                      {activeMapId === property.id ? 'Ocultar ubicación' : 'Ver ubicación'}
-                    </button>
-                  </div>
                 </div>
               </div>
 
-              {/* Mapa Desplegable */}
+              {/* Mapa Desplegable Integrado */}
               <AnimatePresence>
                 {activeMapId === property.id && (
                   <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.5, ease: customEase }}
-                    className="border-t border-border bg-soft/30 overflow-hidden"
+                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                    className="overflow-hidden"
                   >
-                    <div className="p-4 lg:p-8">
-                      <div className="w-full aspect-[16/9] lg:aspect-[21/9] rounded-xl overflow-hidden border border-border shadow-inner" dangerouslySetInnerHTML={{ __html: property.mapIframe.replace('width="600"', 'width="100%"').replace('height="450"', 'height="100%"') }} />
+                    <div className="pt-10">
+                      <div className="w-full aspect-[16/9] lg:aspect-[21/9] border border-border" dangerouslySetInnerHTML={{ __html: property.mapIframe.replace('width="600"', 'width="100%"').replace('height="450"', 'height="100%"') }} />
                     </div>
                   </motion.div>
                 )}
